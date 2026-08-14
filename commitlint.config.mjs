@@ -1,33 +1,19 @@
 export default {
-  extends: ["@commitlint/config-conventional"],
-  rules: {
-    "type-enum": [
-      2,
-      "always",
-      [
-        "feat",
-        "patch",
-        "refactor",
-        "perf",
-        "fix",
-        "chore",
-        "style",
-        "docs",
-        "deps",
-      ],
-    ],
-    "type-case": [2, "always", "lower-case"],
-    "type-empty": [2, "never"],
-    "scope-empty": [0],
-    "scope-case": [2, "always", "lower-case"],
-    "subject-empty": [2, "never"],
-    "subject-full-stop": [2, "never", "."],
-    "subject-case": [
-      2,
-      "never",
-      ["sentence-case", "start-case", "pascal-case", "upper-case"],
-    ],
+	extends: ['@commitlint/config-conventional'],
+	rules: {
+		'type-enum': [
+			2,
+			'always',
+			['feat', 'patch', 'refactor', 'perf', 'fix', 'chore', 'style', 'docs', 'deps'],
+		],
+		'type-case': [2, 'always', 'lower-case'],
+		'type-empty': [2, 'never'],
+		'scope-empty': [0],
+		'scope-case': [2, 'always', 'lower-case'],
+		'subject-empty': [2, 'never'],
+		'subject-full-stop': [2, 'never', '.'],
+		'subject-case': [2, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],
 
-    "header-max-length": [2, "always", 72],
-  },
+		'header-max-length': [2, 'always', 72],
+	},
 };
