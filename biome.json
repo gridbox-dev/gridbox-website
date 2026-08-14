@@ -42,10 +42,18 @@
 				"recommended": true
 			},
 			"a11y": "info"
+		},
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
 		}
 	},
 	"assist": {
-		"enabled": false
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
 	},
 
 	"javascript": {
@@ -68,6 +76,12 @@
 			"indentStyle": "tab",
 			"indentWidth": 2,
 			"bracketSameLine": false
+		}
+	},
+
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	}
 }
