@@ -11,7 +11,10 @@
 		"pnpm-lock.yaml": true,
 		"commitlint.config.mjs": true,
 		"biome.json": true,
-		".husky": true
+		".husky": true,
+		"env.d.ts": true,
+		"tsconfig.json": true,
+		".github": true
 	},
 	"hide-files.files": [
 		".vscode",
@@ -20,6 +23,9 @@
 		"pnpm-lock.yaml",
 		"commitlint.config.mjs",
 		"biome.json",
-		".husky"
+		".husky",
+		"env.d.ts",
+		"tsconfig.json",
+		".github"
 	]
 }
