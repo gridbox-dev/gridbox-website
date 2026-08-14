@@ -1,1 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Scan for sensitive .env files in staged changes
+ENV_FILES=$(git diff --cached --name-only | grep -E '(.*/)?\.env(\..+)?$' | grep -vE '\.(example|template|test)$' || true)
+
+if [ ! -z "$ENV_FILES" ]; then
+  echo "\n\033[31mSECURITY ALERT: Sensitive files detected!\033[0m"
+  echo "\033[33m$ENV_FILES\033[0m"
+  echo "\nAction required: Remove these files using 'git rm --cached' before committing."
+  exit 1
+fi
+
 pnpm exec lint-staged

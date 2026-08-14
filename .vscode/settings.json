@@ -1,0 +1,23 @@
+{
+	"files.exclude": {
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		".vscode": true,
+		"node_modules": true,
+		".gitignore": true,
+		"pnpm-lock.yaml": true,
+		"commitlint.config.mjs": true,
+		"biome.json": true
+	},
+	"hide-files.files": [
+		".vscode",
+		"node_modules",
+		".gitignore",
+		"pnpm-lock.yaml",
+		"commitlint.config.mjs",
+		"biome.json"
+	]
+}
