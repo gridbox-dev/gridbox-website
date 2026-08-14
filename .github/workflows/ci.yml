@@ -1,0 +1,66 @@
+name: "Continuous Integration"
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+    branches:
+      - "**"
+
+jobs:
+  ci:
+    name: "Lint, Typecheck & Security Scan"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: "Security Scan: Check for .env files"
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            RANGE="origin/${{ github.base_ref }}...HEAD"
+          else
+            BEFORE_SHA="${{ github.event.before }}"
+            if [ "$BEFORE_SHA" == "0000000000000000000000000000000000000000" ]; then
+              RANGE="${{ github.sha }}"
+            else
+              RANGE="$BEFORE_SHA..${{ github.sha }}"
+            fi
+          fi
+
+          echo "Scanning range: $RANGE"
+          ENV_FILES=$(git diff --name-only $RANGE | grep -E '(.*/)?\.env(\..+)?$' | grep -vE '\.(example|template|test)$' || true)
+
+          if [ ! -z "$ENV_FILES" ]; then
+            echo "::error title=Security Alert::Sensitive files have been detected in the commit."
+            echo "Files detected: $ENV_FILES"
+            echo "Action required: Remove these files from the Git cache using 'git rm --cached' before pushing."
+            exit 1
+          fi
+
+          echo "Scan completed: No sensitive .env files found."
+
+      - name: "Run Biome Linter & Formatter"
+        run: pnpm biome check .
+
+      - name: "Run TypeScript Typecheck"
+        run: pnpm tsc --noEmit

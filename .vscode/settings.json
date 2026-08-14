@@ -10,7 +10,8 @@
 		".gitignore": true,
 		"pnpm-lock.yaml": true,
 		"commitlint.config.mjs": true,
-		"biome.json": true
+		"biome.json": true,
+		".husky": true
 	},
 	"hide-files.files": [
 		".vscode",
@@ -18,6 +19,7 @@
 		".gitignore",
 		"pnpm-lock.yaml",
 		"commitlint.config.mjs",
-		"biome.json"
+		"biome.json",
+		".husky"
 	]
 }
