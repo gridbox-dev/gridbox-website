@@ -1,0 +1,13 @@
+{
+	"name": "@gridbox-dev/gridbox-website",
+	"version": "0.0.0",
+	"description": "Custom software development and strategic IT consulting in Latin America.",
+	"author": {
+		"name": "Gridbox Development SpA",
+		"email": "hola@gridbox.dev",
+		"url": "https://gridbox.dev"
+	},
+	"homepage": "https://gridbox.dev",
+	"packageManager": "pnpm@10.24.0",
+	"private": true
+}
