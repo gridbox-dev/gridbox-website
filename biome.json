@@ -1,11 +1,24 @@
 {
-	"$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
 		"useIgnoreFile": true
 	},
 	"files": {
+		"includes": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.mjs",
+			"**/*.json",
+			"!**/node_modules",
+			"!**/.next",
+			"!**/out",
+			"!**/build",
+			"!**/public"
+		],
 		"ignoreUnknown": true
 	},
 	"formatter": {
@@ -17,7 +30,19 @@
 		"lineWidth": 95
 	},
 	"linter": {
-		"enabled": false
+		"enabled": true,
+		"rules": {
+			"preset": "all",
+			"correctness": "error",
+			"suspicious": "error",
+			"security": "error",
+			"performance": "error",
+			"complexity": "warn",
+			"style": {
+				"recommended": true
+			},
+			"a11y": "info"
+		}
 	},
 	"assist": {
 		"enabled": false
