@@ -8,7 +8,7 @@
 		"url": "https://gridbox.dev"
 	},
 	"homepage": "https://gridbox.dev",
-	"packageManager": "pnpm@10.24.0",
+	"packageManager": "pnpm@11.21.0",
 	"private": true,
 	"scripts": {
 		"lint": "biome check .",
