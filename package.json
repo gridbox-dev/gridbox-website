@@ -10,11 +10,22 @@
 	"homepage": "https://gridbox.dev",
 	"packageManager": "pnpm@10.24.0",
 	"private": true,
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome format --write .",
+		"check": "biome check --write .",
+		"prepare": "husky"
+	},
 	"devDependencies": {
 		"@biomejs/biome": "^2.5.8",
 		"@commitlint/cli": "^21.2.2",
 		"@commitlint/config-conventional": "^21.2.2",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.3.0"
+	},
+	"lint-staged": {
+		"*.{js,ts,jsx,tsx,json,css}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
 	}
 }
