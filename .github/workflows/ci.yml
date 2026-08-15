@@ -37,7 +37,7 @@ jobs:
           cache: "pnpm"
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --config.ignore-scripts=false
+        run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
 
       - name: "Security Scan: Check for .env files"
         shell: bash
