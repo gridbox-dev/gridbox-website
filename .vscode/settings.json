@@ -5,7 +5,6 @@
 		"**/.hg": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		".github": true,
 		".husky": true,
 		"node_modules": true,
 		".gitignore": true,
@@ -17,7 +16,6 @@
 		".vscode": true
 	},
 	"hide-files.files": [
-		".github",
 		".husky",
 		"node_modules",
 		".gitignore",

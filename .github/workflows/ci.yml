@@ -14,8 +14,12 @@ concurrency:
 
 jobs:
   ci:
-    name: "Lint, Typecheck & Security Scan"
+    name: "Lint, Typecheck, Tests & Security Scan"
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - name: Checkout code
@@ -66,3 +70,23 @@ jobs:
 
       - name: "Run TypeScript Typecheck"
         run: pnpm tsc --noEmit
+
+      - name: "Run Unit Tests & Code Coverage"
+        run: pnpm test:coverage --reporter=github-actions --reporter=junit --outputFile.junit=junit.xml
+
+      - name: "Publish Coverage Report Comment"
+        if: always() && github.event_name == 'pull_request'
+        uses: davelosert/vitest-coverage-report-action@v2
+        with:
+          json-summary-path: './coverage/coverage-summary.json'
+          json-final-path: './coverage/coverage-final.json'
+
+      - name: "Archive Test & Coverage Results"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-coverage-report-${{ github.event.pull_request.number || github.sha }}
+          path: |
+            junit.xml
+            coverage/
+          retention-days: 14
