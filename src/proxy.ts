@@ -9,8 +9,8 @@ import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
 import type { Language } from '@/types/common/i18n';
 
-const SUPPORTED_LOCALES: ReadonlyArray<Language> = ['es', 'en'];
-const DEFAULT_LOCALE: Language = 'es';
+export const SUPPORTED_LOCALES: ReadonlyArray<Language> = ['es', 'en'];
+export const DEFAULT_LOCALE: Language = 'es';
 
 /**
  * Extracts and negotiates the preferred locale from the user's request headers.
