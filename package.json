@@ -50,11 +50,6 @@
 		"typescript": "^5",
 		"vitest": "^4.1.10"
 	},
-	"pnpm": {
-		"onlyBuiltDependencies": [
-			"esbuild"
-		]
-	},
 	"lint-staged": {
 		"*.{js,ts,jsx,tsx,json,css}": [
 			"biome check --write --no-errors-on-unmatched"
