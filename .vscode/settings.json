@@ -11,8 +11,6 @@
 		"LICENSE": true,
 		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
-		"pnpm-workspace.yaml": true,
-		"postcss.config.mjs": true,
 		".vscode": true
 	},
 	"hide-files.files": [
@@ -22,8 +20,6 @@
 		"LICENSE",
 		"next-env.d.ts",
 		"pnpm-lock.yaml",
-		"pnpm-workspace.yaml",
-		"postcss.config.mjs",
 		".vscode"
 	]
 }
