@@ -7,27 +7,25 @@
 		"**/Thumbs.db": true,
 		".github": true,
 		".husky": true,
-		".vscode": true,
 		"node_modules": true,
 		".gitignore": true,
-		"commitlint.config.mjs": true,
 		"LICENSE": true,
 		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
 		"pnpm-workspace.yaml": true,
-		"postcss.config.mjs": true
+		"postcss.config.mjs": true,
+		".vscode": true
 	},
 	"hide-files.files": [
 		".github",
 		".husky",
-		".vscode",
 		"node_modules",
 		".gitignore",
-		"commitlint.config.mjs",
 		"LICENSE",
 		"next-env.d.ts",
 		"pnpm-lock.yaml",
 		"pnpm-workspace.yaml",
-		"postcss.config.mjs"
+		"postcss.config.mjs",
+		".vscode"
 	]
 }
