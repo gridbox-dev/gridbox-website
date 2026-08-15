@@ -7,15 +7,16 @@
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
-	resolve: {
-        tsconfigPaths: true,
+  resolve: {
+    tsconfigPaths: true,
+  },
+  test: {
+    environment: 'node',
+    globals: true,
+    reporters: ['default', 'github-actions', ['junit', { outputFile: 'junit.xml' }]],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json-summary', 'json', 'html'],
     },
-    test: {
-        environment: 'node',
-        globals: true,
-        coverage: {
-			provider: 'v8',
-			reporter: ['text', 'json-summary', 'json', 'html'],
-		},
-    },
+  },
 });

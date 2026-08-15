@@ -72,7 +72,7 @@ jobs:
         run: pnpm tsc --noEmit
 
       - name: "Run Unit Tests & Code Coverage"
-        run: pnpm test:coverage --coverage --reporter=github-actions --reporter=junit --outputFile.junit=junit.xml
+        run: pnpm test:coverage
 
       - name: "Publish Coverage Report Comment"
         if: always() && github.event_name == 'pull_request'
