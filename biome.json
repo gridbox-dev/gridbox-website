@@ -36,7 +36,15 @@
 			"correctness": {
 				"preset": "all",
 				"noNodejsModules": "off",
-				"useImportExtensions": "off"
+				"useImportExtensions": "off",
+				"useQwikValidLexicalScope": "off",
+				"useQwikClasslist": "off",
+				"noQwikUseVisibleTask": "off",
+				"useQwikMethodUsage": "off",
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				}
 			},
 			"suspicious": "error",
 			"security": "error",

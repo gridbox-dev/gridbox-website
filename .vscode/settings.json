@@ -15,8 +15,7 @@
 		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
 		"pnpm-workspace.yaml": true,
-		"postcss.config.mjs": true,
-		"biome.json": true
+		"postcss.config.mjs": true
 	},
 	"hide-files.files": [
 		".github",
@@ -29,7 +28,6 @@
 		"next-env.d.ts",
 		"pnpm-lock.yaml",
 		"pnpm-workspace.yaml",
-		"postcss.config.mjs",
-		"biome.json"
+		"postcss.config.mjs"
 	]
 }
