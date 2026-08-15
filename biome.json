@@ -35,7 +35,8 @@
 			"preset": "all",
 			"correctness": {
 				"preset": "all",
-				"noNodejsModules": "off"
+				"noNodejsModules": "off",
+				"useImportExtensions": "off"
 			},
 			"suspicious": "error",
 			"security": "error",
@@ -44,7 +45,10 @@
 			"style": {
 				"recommended": true
 			},
-			"a11y": "info"
+			"a11y": "info",
+			"nursery": {
+				"recommended": true
+			}
 		},
 		"domains": {
 			"next": "recommended",
@@ -54,6 +58,7 @@
 	"assist": {
 		"actions": {
 			"source": {
+				"recommended": true,
 				"organizeImports": "on"
 			}
 		}
