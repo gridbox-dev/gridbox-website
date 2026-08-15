@@ -63,6 +63,14 @@
 			"react": "recommended"
 		}
 	},
+	"overrides": [
+		{
+			"includes": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
+			"linter": {
+				"enabled": false
+			}
+		}
+	],
 	"assist": {
 		"actions": {
 			"source": {
