@@ -11,6 +11,11 @@
 	"packageManager": "pnpm@11.21.0",
 	"private": true,
 	"scripts": {
+		"test": "vitest",
+		"test:run": "vitest run",
+		"test:ui": "vitest --ui",
+		"test:verbose": "vitest --reporter=verbose",
+		"test:coverage": "vitest run --coverage",
 		"dev": "tsx scripts/clean-next-cache.ts && next dev",
 		"build": "next build",
 		"start": "next start",
@@ -35,12 +40,15 @@
 		"@types/node": "^20",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
+		"@vitest/coverage-v8": "4.1.10",
+		"@vitest/ui": "4.1.10",
 		"babel-plugin-react-compiler": "1.0.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^17.3.0",
 		"tailwindcss": "^4",
 		"tsx": "^4.23.12",
-		"typescript": "^5"
+		"typescript": "^5",
+		"vitest": "^4.1.10"
 	},
 	"lint-staged": {
 		"*.{js,ts,jsx,tsx,json,css}": [
