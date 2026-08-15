@@ -33,7 +33,19 @@
 		"enabled": true,
 		"rules": {
 			"preset": "all",
-			"correctness": "error",
+			"correctness": {
+				"preset": "all",
+				"noNodejsModules": "off",
+				"useImportExtensions": "off",
+				"useQwikValidLexicalScope": "off",
+				"useQwikClasslist": "off",
+				"noQwikUseVisibleTask": "off",
+				"useQwikMethodUsage": "off",
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				}
+			},
 			"suspicious": "error",
 			"security": "error",
 			"performance": "error",
@@ -41,11 +53,31 @@
 			"style": {
 				"recommended": true
 			},
-			"a11y": "info"
+			"a11y": "info",
+			"nursery": {
+				"recommended": true
+			}
+		},
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
 		}
 	},
+	"overrides": [
+		{
+			"includes": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
+			"linter": {
+				"enabled": false
+			}
+		}
+	],
 	"assist": {
-		"enabled": false
+		"actions": {
+			"source": {
+				"recommended": true,
+				"organizeImports": "on"
+			}
+		}
 	},
 
 	"javascript": {
@@ -68,6 +100,12 @@
 			"indentStyle": "tab",
 			"indentWidth": 2,
 			"bracketSameLine": false
+		}
+	},
+
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
 		}
 	}
 }

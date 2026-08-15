@@ -48,4 +48,4 @@ jobs:
               ;;
           esac
 
-          echo "✅ GitFlow transition approved for '$SOURCE_BRANCH' ➔ '$TARGET_BRANCH'"
+          echo "GitFlow transition approved for '$SOURCE_BRANCH' ➔ '$TARGET_BRANCH'"

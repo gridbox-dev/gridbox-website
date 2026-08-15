@@ -5,27 +5,21 @@
 		"**/.hg": true,
 		"**/.DS_Store": true,
 		"**/Thumbs.db": true,
-		".vscode": true,
+		".husky": true,
 		"node_modules": true,
 		".gitignore": true,
+		"LICENSE": true,
+		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
-		"commitlint.config.mjs": true,
-		"biome.json": true,
-		".husky": true,
-		"env.d.ts": true,
-		"tsconfig.json": true,
-		".github": true
+		".vscode": true
 	},
 	"hide-files.files": [
-		".vscode",
+		".husky",
 		"node_modules",
 		".gitignore",
+		"LICENSE",
+		"next-env.d.ts",
 		"pnpm-lock.yaml",
-		"commitlint.config.mjs",
-		"biome.json",
-		".husky",
-		"env.d.ts",
-		"tsconfig.json",
-		".github"
+		".vscode"
 	]
 }
