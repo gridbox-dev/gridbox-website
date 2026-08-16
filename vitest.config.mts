@@ -5,10 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { defineConfig } from 'vitest/config';
-import nextEnv from '@next/env';
-import { cwd } from 'node:process';
 
-nextEnv.loadEnvConfig(cwd());
 
 export default defineConfig({
   resolve: {
@@ -22,5 +19,8 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json-summary', 'json', 'html'],
     },
+    env: {
+        NEXT_PUBLIC_BASE_URL: 'http://localhost:3000'
+    }
   },
 });
