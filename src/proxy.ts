@@ -10,7 +10,7 @@ import { type NextRequest, NextResponse } from 'next/server';
 import type { Language } from './types/common/i18n';
 
 /** Supported application locales. */
-export const SUPPORTED_LOCALES: ReadonlyArray<Language> = ['es', 'en'];
+export const SUPPORTED_LOCALES: ReadonlyArray<Language> = ['es', 'en'] as const;
 
 /** Fallback locale used when no matching preferred language is found. */
 export const DEFAULT_LOCALE: Language = 'es';
