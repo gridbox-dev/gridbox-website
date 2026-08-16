@@ -6,6 +6,7 @@
 
 import { defineConfig } from 'vitest/config';
 
+
 export default defineConfig({
   resolve: {
     tsconfigPaths: true,
@@ -18,5 +19,8 @@ export default defineConfig({
       provider: 'v8',
       reporter: ['text', 'json-summary', 'json', 'html'],
     },
+    env: {
+        NEXT_PUBLIC_BASE_URL: 'http://localhost:3000'
+    }
   },
 });

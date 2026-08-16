@@ -11,7 +11,12 @@
 		"LICENSE": true,
 		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
-		".vscode": true
+		".vscode": true,
+		".npmrc": true,
+		"commitlint.config.mjs": true,
+		"pnpm-workspace.yaml": true,
+		"postcss.config.mjs": true,
+		"vitest.config.mts": true
 	},
 	"hide-files.files": [
 		".husky",
@@ -20,6 +25,11 @@
 		"LICENSE",
 		"next-env.d.ts",
 		"pnpm-lock.yaml",
-		".vscode"
+		".vscode",
+		".npmrc",
+		"commitlint.config.mjs",
+		"pnpm-workspace.yaml",
+		"postcss.config.mjs",
+		"vitest.config.mts"
 	]
 }
