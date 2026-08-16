@@ -11,6 +11,9 @@ importers:
       '@formatjs/intl-localematcher':
         specifier: ^0.8.13
         version: 0.8.13
+      '@next/env':
+        specifier: ^16.3.1
+        version: 16.3.1
       negotiator:
         specifier: ^1.0.0
         version: 1.0.0

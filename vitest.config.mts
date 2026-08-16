@@ -5,6 +5,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { defineConfig } from 'vitest/config';
+import nextEnv from '@next/env';
+import { cwd } from 'node:process';
+
+nextEnv.loadEnvConfig(cwd());
 
 export default defineConfig({
   resolve: {
