@@ -52,9 +52,16 @@ export const isSupportedLanguage = (locale: string): locale is Language => {
  */
 export const getDictionary = cache(
 	// biome-ignore lint/suspicious/useAwait: Returns the loader Promise directly without an internal await.
-	async <P extends PageNamespace>(lang: Language, page: P): Promise<InferDictionary<P>> => {
+	async <P extends PageNamespace>(
+		lang: Language,
+		page: P,
+	): Promise<InferDictionary<P> | undefined> => {
 		const languageLoaders = dictionaries[lang] ?? dictionaries[DEFAULT_LOCALE];
-		const pageLoader = languageLoaders[page] ?? dictionaries[DEFAULT_LOCALE][page];
+		const pageLoader = languageLoaders?.[page] ?? dictionaries[DEFAULT_LOCALE]?.[page];
+
+		if (typeof pageLoader !== 'function') {
+			return undefined;
+		}
 
 		return pageLoader() as Promise<InferDictionary<P>>;
 	},
