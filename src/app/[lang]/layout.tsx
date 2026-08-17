@@ -5,8 +5,10 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX, PropsWithChildren } from 'react';
+import { fontSans, fontSerif } from '@/config/ui/fonts';
 import { DEFAULT_LOCALE } from '@/proxy';
 import type { StaticParams } from '@/types/common/next';
+import '@/styles/globals.css';
 
 /**
  * Generates the static route parameters for internationalization at build time.
@@ -27,7 +29,10 @@ async function RootLayout(props: PropsWithChildren<StaticParams>): Promise<JSX.E
 	const { lang } = await params;
 
 	return (
-		<html lang={lang || DEFAULT_LOCALE}>
+		<html
+			lang={lang || DEFAULT_LOCALE}
+			className={`${fontSans.variable} ${fontSerif.variable}`}
+		>
 			<body>{children}</body>
 		</html>
 	);

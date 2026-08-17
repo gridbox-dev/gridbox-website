@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="39" failures="0" errors="0" time="0.0419108">
+    <testsuite name="src/proxy.test.ts" timestamp="2026-08-17T01:01:24.968Z" hostname="ROG-FLOW" tests="22" failures="0" errors="0" skipped="0" time="0.0288124">
+        <testcase classname="src/proxy.test.ts" name="extractLocaleFromPath &gt; extracts path &quot;/es/dashboard&quot; as es" time="0.0016965">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="extractLocaleFromPath &gt; extracts path &quot;/en&quot; as en" time="0.0002199">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="extractLocaleFromPath &gt; extracts path &quot;/fr/dashboard&quot; as undefined" time="0.0001249">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="extractLocaleFromPath &gt; extracts path &quot;/about&quot; as undefined" time="0.0002049">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="extractLocaleFromPath &gt; extracts path &quot;/&quot; as undefined" time="0.0001343">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="readLocaleFromCookie &gt; resolves cookie state {&quot;cookies&quot;:{&quot;NEXT_LOCALE&quot;:&quot;en&quot;}} to en" time="0.0027249">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="readLocaleFromCookie &gt; resolves cookie state {} to undefined" time="0.0004282">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="readLocaleFromCookie &gt; resolves cookie state {&quot;cookies&quot;:{&quot;NEXT_LOCALE&quot;:&quot;fr&quot;}} to undefined" time="0.000353">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="negotiateHeaderLocale &gt; negotiates header state {&quot;headers&quot;:{&quot;accept-language&quot;:&quot;en-US,en;q=0.8&quot;}} to en" time="0.004477">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="negotiateHeaderLocale &gt; negotiates header state {} to es" time="0.0005281">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="negotiateHeaderLocale &gt; negotiates header state {&quot;headers&quot;:{&quot;accept-language&quot;:&quot;de-DE,de;q=0.9&quot;}} to es" time="0.0031332">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="negotiateHeaderLocale &gt; returns default locale when accept-language header contains malformed BCP 47 tags" time="0.0003642">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="resolvePreferredLocale &gt; resolves preferred locale for {&quot;cookies&quot;:{&quot;NEXT_LOCALE&quot;:&quot;en&quot;},&quot;headers&quot;:{&quot;accept-language&quot;:&quot;es-ES,es;q=0.9&quot;}} as en" time="0.000251">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="resolvePreferredLocale &gt; resolves preferred locale for {&quot;headers&quot;:{&quot;accept-language&quot;:&quot;en-US,en;q=0.9&quot;}} as en" time="0.0008085">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="handleExistingLocalePath &gt; syncs cookie on mismatch and skips when aligned" time="0.0029627">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="handleMissingLocalePath &gt; redirects with preferred locale and updates cookie" time="0.0007308">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Middleware Orchestrator Integration &gt; redirects unlocalized path to preferred locale path" time="0.0004632">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Middleware Orchestrator Integration &gt; passes through and updates cookie when visiting different locale directly" time="0.000319">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Middleware Orchestrator Integration &gt; returns undefined to proceed when path locale matches cookie" time="0.0001839">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Strict Edge Cases &amp; Regressions &gt; preserves query parameters and URL search params during redirection" time="0.0003778">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Strict Edge Cases &amp; Regressions &gt; picks secondary supported language in Accept-Language header over default fallback" time="0.0048904">
+        </testcase>
+        <testcase classname="src/proxy.test.ts" name="Strict Edge Cases &amp; Regressions &gt; handles root path redirection correctly" time="0.000664">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/config/env/env.test.ts" timestamp="2026-08-17T01:01:24.973Z" hostname="ROG-FLOW" tests="5" failures="0" errors="0" skipped="0" time="0.0077007">
+        <testcase classname="src/config/env/env.test.ts" name="createEnv &gt; should successfully parse valid environment variables" time="0.0025647">
+        </testcase>
+        <testcase classname="src/config/env/env.test.ts" name="createEnv &gt; should throw an error when validation fails" time="0.0018648">
+        </testcase>
+        <testcase classname="src/config/env/env.test.ts" name="createEnv &gt; should return a frozen, immutable object" time="0.0008374">
+        </testcase>
+        <testcase classname="src/config/env/env.test.ts" name="env integration &gt; should successfully expose merged server and client properties" time="0.0002975">
+        </testcase>
+        <testcase classname="src/config/env/env.test.ts" name="env integration &gt; should be frozen at the top level" time="0.0003609">
+        </testcase>
+    </testsuite>
+    <testsuite name="src/config/i18n/dictionaries.test.ts" timestamp="2026-08-17T01:01:24.974Z" hostname="ROG-FLOW" tests="12" failures="0" errors="0" skipped="0" time="0.0053977">
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;es&quot; as true" time="0.0014612">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;en&quot; as true" time="0.0001693">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;fr&quot; as false" time="0.000107">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;de&quot; as false" time="0.0001355">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;&quot; as false" time="0.0001165">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="isSupportedLanguage &gt; evaluates language code &quot;es-CL&quot; as false" time="0.0000846">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="getDictionary &gt; resolves dictionary payload for language &quot;es&quot; and namespace &quot;dummy&quot;" time="0.0002316">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="getDictionary &gt; resolves dictionary payload for language &quot;en&quot; and namespace &quot;dummy&quot;" time="0.0001164">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="getDictionary &gt; falls back safely to default locale (es) when an unsupported language is provided" time="0.000441">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="getDictionary &gt; falls back safely to default locale namespace loader when an invalid namespace is provided" time="0.0001696">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="React Cache &amp; Async Resolution &gt; returns a promise that resolves the expected schema structure" time="0.0007334">
+        </testcase>
+        <testcase classname="src/config/i18n/dictionaries.test.ts" name="React Cache &amp; Async Resolution &gt; consistently resolves identical dictionary results across sequential cached calls" time="0.0001117">
+        </testcase>
+    </testsuite>
+</testsuites>
