@@ -8,6 +8,7 @@ import type { JSX, PropsWithChildren } from 'react';
 import { fontSans, fontSerif } from '@/config/ui/fonts';
 import { DEFAULT_LOCALE } from '@/proxy';
 import type { StaticParams } from '@/types/common/next';
+import '@/styles/globals.css';
 
 /**
  * Generates the static route parameters for internationalization at build time.
