@@ -11,7 +11,6 @@
 		"LICENSE": true,
 		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
-		".vscode": true,
 		".npmrc": true,
 		"commitlint.config.mjs": true,
 		"pnpm-workspace.yaml": true,
@@ -25,11 +24,13 @@
 		"LICENSE",
 		"next-env.d.ts",
 		"pnpm-lock.yaml",
-		".vscode",
 		".npmrc",
 		"commitlint.config.mjs",
 		"pnpm-workspace.yaml",
 		"postcss.config.mjs",
 		"vitest.config.mts"
-	]
+	],
+
+	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
+	"typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/tailwind-variants"]
 }
