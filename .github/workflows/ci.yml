@@ -1,3 +1,9 @@
+#---------------------------------------------------------------------------------------------
+# Copyright (c) Gridbox Development SpA. All rights reserved.
+# No license available. See README in the project root for license information.
+# Gridbox Development Official Website.
+#---------------------------------------------------------------------------------------------
+
 name: "Continuous Integration"
 
 on:
@@ -12,34 +18,21 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 
+permissions:
+  contents: read
+
 jobs:
-  ci:
-    name: "Lint, Typecheck, Tests & Security Scan"
+  security-scan:
+    name: "Security: Check sensitive files"
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: read
-      pull-requests: write
-
     steps:
-      - name: Checkout code
+      - name: "Checkout repository"
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: "pnpm"
-
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
-
-      - name: "Security Scan: Check for .env files"
+      - name: "Scan committed .env files"
         shell: bash
         run: |
           if [ "${{ github.event_name }}" == "pull_request" ]; then
@@ -59,29 +52,79 @@ jobs:
           if [ ! -z "$ENV_FILES" ]; then
             echo "::error title=Security Alert::Sensitive files have been detected in the commit."
             echo "Files detected: $ENV_FILES"
-            echo "Action required: Remove these files from the Git cache using 'git rm --cached' before pushing."
+            echo "Remove these files from the Git cache using 'git rm --cached' before pushing."
             exit 1
           fi
 
-          echo "Scan completed: No sensitive .env files found."
+          echo "No sensitive .env files found."
 
-      - name: "Run Biome Linter & Formatter"
+  code-quality:
+    name: "Code Quality: Lint, Typecheck and Build"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Install pnpm"
+        uses: pnpm/action-setup@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: "pnpm"
+
+      - name: "Install dependencies"
+        run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
+
+      - name: "Biome linting and formatting"
         run: pnpm biome check .
 
-      - name: "Run TypeScript Typecheck"
+      - name: "Typescript check"
         run: pnpm tsc --noEmit
 
-      - name: "Run Unit Tests & Code Coverage"
+      - name: "Verify production build"
+        run: pnpm build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1
+          NEXT_PUBLIC_BASE_URL: "http://localhost:3000"
+
+  unit-tests:
+    name: "Testing: Unit and Coverage"
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v4
+
+      - name: "Install pnpm"
+        uses: pnpm/action-setup@v4
+
+      - name: "Setup Node.js"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: "pnpm"
+
+      - name: "Install dependencies"
+        run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
+
+      - name: "Run unit tests"
         run: pnpm test:coverage
 
-      - name: "Publish Coverage Report Comment"
+      - name: "Publish test coverage comment"
         if: always() && github.event_name == 'pull_request'
         uses: davelosert/vitest-coverage-report-action@v2
         with:
-          json-summary-path: './coverage/coverage-summary.json'
-          json-final-path: './coverage/coverage-final.json'
+          json-summary-path: "./coverage/coverage-summary.json"
+          json-final-path: "./coverage/coverage-final.json"
 
-      - name: "Archive Test & Coverage Results"
+      - name: "Archive coverage artifacts"
         if: always()
         uses: actions/upload-artifact@v4
         with:
