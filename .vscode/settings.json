@@ -15,7 +15,10 @@
 		"commitlint.config.mjs": true,
 		"pnpm-workspace.yaml": true,
 		"postcss.config.mjs": true,
-		"vitest.config.mts": true
+		"vitest.config.mts": true,
+		".vscode": true,
+		".next": true,
+		".github": true
 	},
 	"hide-files.files": [
 		".husky",
@@ -28,7 +31,10 @@
 		"commitlint.config.mjs",
 		"pnpm-workspace.yaml",
 		"postcss.config.mjs",
-		"vitest.config.mts"
+		"vitest.config.mts",
+		".vscode",
+		".next",
+		".github"
 	],
 
 	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
