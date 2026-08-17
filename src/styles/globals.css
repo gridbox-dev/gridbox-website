@@ -4,11 +4,11 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@import './theme.css';
-@import './base.css';
-@import './components.css';
-@import './utilities.css';
+@import "./theme.css";
+@import "./base.css";
+@import "./components.css";
+@import "./utilities.css";
 
 @custom-variant dark (&:where(.dark-mode, .dark-mode *));

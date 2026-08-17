@@ -14,6 +14,7 @@
 			"**/*.mjs",
 			"**/*.json",
 			"**/*.md",
+			"**/*.css",
 			"!**/node_modules",
 			"!**/.next",
 			"!**/out",
@@ -107,6 +108,9 @@
 	"css": {
 		"parser": {
 			"tailwindDirectives": true
+		},
+		"formatter": {
+			"enabled": true
 		}
 	}
 }
