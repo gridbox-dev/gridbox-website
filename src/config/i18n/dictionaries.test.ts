@@ -34,21 +34,25 @@ describe('isSupportedLanguage', () => {
  */
 describe('getDictionary', () => {
 	it.each([
-		['es', 'dummy'],
-		['en', 'dummy'],
+		['es', 'metadata'],
+		['en', 'metadata'],
 	] as const)(
 		'resolves dictionary payload for language "%s" and namespace "%s"',
 		async (lang, page) => {
 			const dictionary = await getDictionary(lang, page);
-			expect(dictionary).toBeUndefined();
+			expect(dictionary).toBeDefined();
+			expect(dictionary).toHaveProperty('title');
+			expect(dictionary).toHaveProperty('description');
+			expect(dictionary).toHaveProperty('keywords');
 		},
 	);
 
 	it('falls back safely to default locale (es) when an unsupported language is provided', async () => {
 		const unsupportedLanguage = 'fr' as Language;
-		const dictionary = await getDictionary(unsupportedLanguage, 'dummy');
+		const dictionary = await getDictionary(unsupportedLanguage, 'metadata');
 
-		expect(dictionary).toBeUndefined();
+		expect(dictionary).toBeDefined();
+		expect(dictionary).toHaveProperty('title');
 	});
 
 	it('falls back safely to default locale namespace loader when an invalid namespace is provided', async () => {
@@ -64,15 +68,17 @@ describe('getDictionary', () => {
  */
 describe('React Cache & Async Resolution', () => {
 	it('returns a promise that resolves the expected schema structure', async () => {
-		const dictionaryPromise = getDictionary('es', 'dummy');
+		const dictionaryPromise = getDictionary('es', 'metadata');
 
 		expect(dictionaryPromise).toBeInstanceOf(Promise);
-		await expect(dictionaryPromise).resolves.toBeUndefined();
+		const resolved = await dictionaryPromise;
+		expect(resolved).toBeDefined();
+		expect(resolved).toHaveProperty('title');
 	});
 
 	it('consistently resolves identical dictionary results across sequential cached calls', async () => {
-		const firstCall = await getDictionary('es', 'dummy');
-		const secondCall = await getDictionary('es', 'dummy');
+		const firstCall = await getDictionary('es', 'metadata');
+		const secondCall = await getDictionary('es', 'metadata');
 
 		expect(firstCall).toBe(secondCall);
 	});

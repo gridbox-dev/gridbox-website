@@ -18,7 +18,9 @@
 		"vitest.config.mts": true,
 		".vscode": true,
 		".next": true,
-		"junit.xml": true
+		"junit.xml": true,
+		".github": true,
+		".env.example": true
 	},
 	"hide-files.files": [
 		".husky",
@@ -34,7 +36,9 @@
 		"vitest.config.mts",
 		".vscode",
 		".next",
-		"junit.xml"
+		"junit.xml",
+		".github",
+		".env.example"
 	],
 
 	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
