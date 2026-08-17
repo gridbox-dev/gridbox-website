@@ -40,7 +40,10 @@ describe('getDictionary', () => {
 		'resolves dictionary payload for language "%s" and namespace "%s"',
 		async (lang, page) => {
 			const dictionary = await getDictionary(lang, page);
-			expect(dictionary).toBeUndefined();
+			expect(dictionary).toBeDefined();
+			expect(dictionary).toHaveProperty('title');
+			expect(dictionary).toHaveProperty('description');
+			expect(dictionary).toHaveProperty('keywords');
 		},
 	);
 
@@ -48,7 +51,8 @@ describe('getDictionary', () => {
 		const unsupportedLanguage = 'fr' as Language;
 		const dictionary = await getDictionary(unsupportedLanguage, 'metadata');
 
-		expect(dictionary).toBeUndefined();
+		expect(dictionary).toBeDefined();
+		expect(dictionary).toHaveProperty('title');
 	});
 
 	it('falls back safely to default locale namespace loader when an invalid namespace is provided', async () => {
@@ -67,7 +71,9 @@ describe('React Cache & Async Resolution', () => {
 		const dictionaryPromise = getDictionary('es', 'metadata');
 
 		expect(dictionaryPromise).toBeInstanceOf(Promise);
-		await expect(dictionaryPromise).resolves.toBeUndefined();
+		const resolved = await dictionaryPromise;
+		expect(resolved).toBeDefined();
+		expect(resolved).toHaveProperty('title');
 	});
 
 	it('consistently resolves identical dictionary results across sequential cached calls', async () => {
