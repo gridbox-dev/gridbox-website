@@ -15,10 +15,10 @@ import 'server-only';
  */
 const dictionaries = {
 	es: {
-		dummy: async () => undefined,
+		metadata: async () => import('./locales/es/metadata.json').then((m) => m.default),
 	},
 	en: {
-		dummy: async () => undefined,
+		metadata: async () => import('./locales/en/metadata.json').then((m) => m.default),
 	},
 } as const satisfies Record<Language, Record<string, () => Promise<unknown>>>;
 

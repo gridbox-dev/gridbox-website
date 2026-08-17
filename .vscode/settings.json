@@ -19,7 +19,8 @@
 		".vscode": true,
 		".next": true,
 		"junit.xml": true,
-		".github": true
+		".github": true,
+		".env.example": true
 	},
 	"hide-files.files": [
 		".husky",
@@ -36,7 +37,8 @@
 		".vscode",
 		".next",
 		"junit.xml",
-		".github"
+		".github",
+		".env.example"
 	],
 
 	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
