@@ -73,12 +73,12 @@ export async function generateMetadata({ params }: StaticParams): Promise<Metada
 			{
 				rel: 'icon',
 				type: 'image/svg+xml',
-				url: '/favicons/favicon.svg',
+				url: '/icons/favicon.svg',
 			},
 			{
 				rel: 'apple-touch-icon',
 				sizes: '180x180',
-				url: '/favicons/apple-touch-icon.png',
+				url: '/icons/apple-touch-icon.png',
 			},
 		],
 
