@@ -1,4 +1,10 @@
-name: 'Branch Policy Enforcer'
+#---------------------------------------------------------------------------------------------
+# Copyright (c) Gridbox Development SpA. All rights reserved.
+# No license available. See README in the project root for license information.
+# Gridbox Development Official Website.
+#---------------------------------------------------------------------------------------------
+
+name: "Branch Policy Enforcer"
 
 on:
   pull_request:
@@ -8,12 +14,20 @@ on:
       - staging
       - development
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
 jobs:
   validate-gitflow:
-    name: 'Enforce GitFlow Rules'
+    name: "Enforce GitFlow Rules"
     runs-on: ubuntu-latest
+
     steps:
-      - name: 'Verify PR Source Branch'
+      - name: "Verify PR Source Branch"
         shell: bash
         run: |
           TARGET_BRANCH="${{ github.base_ref }}"
@@ -23,7 +37,7 @@ jobs:
 
           case "$TARGET_BRANCH" in
             main)
-              if [[ "$SOURCE_BRANCH" != "staging" && ! "$SOURCE_BRANCH" == hotfix/* ]]; then
+              if [[ "$SOURCE_BRANCH" != "staging" && "$SOURCE_BRANCH" != hotfix/* ]]; then
                 echo "::error title=Invalid GitFlow Transition::The 'main' branch only accepts PRs from 'staging' or 'hotfix/*' branches. (Attempted: '$SOURCE_BRANCH')"
                 exit 1
               fi
