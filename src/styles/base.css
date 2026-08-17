@@ -10,10 +10,15 @@
 		color: var(--color-text-primary);
 	}
 
+	html,
 	body {
 		font-family: var(--font-sans);
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-variant-ligatures: contextual;
+		font-variant-ligatures: contextual;
+		-webkit-font-kerning: normal;
+		font-kerning: normal;
 	}
 
 	.dark-mode {
