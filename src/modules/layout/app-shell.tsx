@@ -5,6 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX, PropsWithChildren } from 'react';
+import GridOverlay from '@/components/tools/grid-overlay/grid-overlay';
 
 /**
  * Provides the core structural shell wrapping global UI elements,
@@ -17,6 +18,7 @@ function AppShell(props: PropsWithChildren): JSX.Element {
 
 	return (
 		<div id='app-shell'>
+			{<GridOverlay />}
 			<main id='main-content'>{children}</main>
 		</div>
 	);
