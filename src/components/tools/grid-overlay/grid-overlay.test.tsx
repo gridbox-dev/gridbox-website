@@ -78,6 +78,29 @@ describe('GridOverlay', () => {
 	});
 
 	/**
+	 * Verifies visibility toggling when uppercase G is pressed.
+	 */
+	it('should toggle visibility when uppercase G is pressed', () => {
+		render(<GridOverlay />);
+
+		fireEvent.keyDown(window, { key: 'G', ctrlKey: true, shiftKey: true });
+		expect(document.querySelector('#grid-overlay')).not.toBeNull();
+	});
+
+	/**
+	 * Verifies that non-matching key combinations or other keys are ignored.
+	 */
+	it('should ignore non-matching key combinations', () => {
+		render(<GridOverlay />);
+
+		fireEvent.keyDown(window, { key: 'a', ctrlKey: true, shiftKey: true });
+		expect(document.querySelector('#grid-overlay')).toBeNull();
+
+		fireEvent.keyDown(window, { key: 'g', ctrlKey: false, shiftKey: false });
+		expect(document.querySelector('#grid-overlay')).toBeNull();
+	});
+
+	/**
 	 * Verifies that the keyboard shortcut is ignored when the focus is inside editable form controls.
 	 */
 	it('should not be triggered if user is typing in an input field', () => {
@@ -92,6 +115,17 @@ describe('GridOverlay', () => {
 		input.focus();
 
 		fireEvent.keyDown(input, { key: 'g', ctrlKey: true, shiftKey: true });
+		expect(document.querySelector('#grid-overlay')).toBeNull();
+	});
+
+	/**
+	 * Verifies that the window event listener is removed when unmounted.
+	 */
+	it('should clean up event listener on unmount', () => {
+		const { unmount } = render(<GridOverlay />);
+		unmount();
+
+		fireEvent.keyDown(window, { key: 'g', ctrlKey: true, shiftKey: true });
 		expect(document.querySelector('#grid-overlay')).toBeNull();
 	});
 });
