@@ -9,6 +9,7 @@ import type { JSX, PropsWithChildren } from 'react';
 import { env } from '@/config/env';
 import { getDictionary, type InferDictionary } from '@/config/i18n/dictionaries';
 import { fontSans, fontSerif } from '@/config/ui/fonts';
+import AppShell from '@/modules/layout/app-shell';
 import { DEFAULT_LOCALE } from '@/proxy';
 import type { Language } from '@/types/common/i18n';
 import type { StaticParams } from '@/types/common/next';
@@ -150,7 +151,9 @@ async function RootLayout(props: PropsWithChildren<StaticParams>): Promise<JSX.E
 			lang={lang || DEFAULT_LOCALE}
 			className={`${fontSans.variable} ${fontSerif.variable}`}
 		>
-			<body>{children}</body>
+			<body>
+				<AppShell>{children}</AppShell>
+			</body>
 		</html>
 	);
 }

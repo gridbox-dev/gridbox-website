@@ -43,6 +43,8 @@
 				"useQwikClasslist": "off",
 				"noQwikUseVisibleTask": "off",
 				"useQwikMethodUsage": "off",
+				"useUniqueElementIds": "off",
+				"noProcessGlobal": "off",
 				"noUnusedVariables": {
 					"level": "warn",
 					"fix": "none"
@@ -90,6 +92,7 @@
 			"indentWidth": 2,
 			"semicolons": "always",
 			"quoteStyle": "single",
+			"jsxQuoteStyle": "single",
 			"bracketSameLine": false,
 			"bracketSpacing": true
 		}

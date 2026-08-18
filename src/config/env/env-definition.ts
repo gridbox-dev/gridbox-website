@@ -4,8 +4,6 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
-import process from 'node:process';
-
 /**
  * Reads raw process variables intended strictly for server execution.
  */
