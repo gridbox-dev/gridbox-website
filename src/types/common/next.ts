@@ -4,7 +4,9 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
-/** Declared static params for locale routes. */
+/**
+ * Declared static params for locale routes.
+ */
 export interface StaticParams {
 	params: Promise<{
 		lang: string;
