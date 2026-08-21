@@ -5,6 +5,14 @@
  *--------------------------------------------------------------------------------------------*/
 
 /**
- * Supported languages for website internationalization.
+ * Assigns unique identifiers to components.
  */
-export type Language = 'es' | 'en';
+export interface HandledComponent {
+	componentLayer?: string;
+	componentId?: string;
+}
+
+/**
+ * Style typed variables for light and dark modes.
+ */
+export type Theme = 'dark' | 'light';
