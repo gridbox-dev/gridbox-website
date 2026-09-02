@@ -9,7 +9,7 @@ import { Box, type BoxProps } from '@/components/base/box';
 import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
-	base: 'min-h-svh w-screen',
+	base: 'min-h-svh w-screen text-primary',
 
 	variants: {
 		background: {

@@ -1,27 +1,28 @@
 {
 	"files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        ".husky": true,
-        "node_modules": true,
-        "LICENSE": true,
-        "pnpm-lock.yaml": true,
-        ".npmrc": true,
-        "commitlint.config.mjs": true,
-        "pnpm-workspace.yaml": true,
-        "postcss.config.mjs": true,
-        "vitest.config.mts": true,
-        ".next": true,
-        "junit.xml": true,
-        ".github": true,
-        ".env.example": true,
-        "coverage": true,
-        "next-env.d.ts": true,
-        ".gitignore": true
-    },
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/.DS_Store": true,
+		"**/Thumbs.db": true,
+		".husky": true,
+		"node_modules": true,
+		"LICENSE": true,
+		"pnpm-lock.yaml": true,
+		".npmrc": true,
+		"commitlint.config.mjs": true,
+		"pnpm-workspace.yaml": true,
+		"postcss.config.mjs": true,
+		"vitest.config.mts": true,
+		".next": true,
+		"junit.xml": true,
+		".github": true,
+		".env.example": true,
+		"coverage": true,
+		"next-env.d.ts": true,
+		".gitignore": true,
+		".vscode": true
+	},
 
 	"hide-files.files": [
 		".husky",
@@ -39,11 +40,10 @@
 		".env.example",
 		"coverage",
 		"next-env.d.ts",
-		".gitignore"
+		".gitignore",
+		".vscode"
 	],
 	"typescript.tsdk": "node_modules\\typescript\\lib",
-    "tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
-	"typescript.preferences.autoImportFileExcludePatterns": [
-		"**/node_modules/tailwind-variants"
-	]
+	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
+	"typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/tailwind-variants"]
 }
