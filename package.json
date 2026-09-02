@@ -22,7 +22,8 @@
 		"test": "vitest",
 		"test:ui": "vitest --ui",
 		"test:verbose": "vitest --reporter=verbose",
-		"test:coverage": "vitest run --coverage"
+		"test:coverage": "vitest run --coverage --passWithNoTests",
+		"typecheck": "next typegen && tsc --noEmit"
 	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.8.13",

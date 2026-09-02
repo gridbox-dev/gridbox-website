@@ -82,7 +82,7 @@ jobs:
         run: pnpm biome check .
 
       - name: "Typescript check"
-        run: pnpm tsc --noEmit
+        run: pnpm typecheck
 
       - name: "Verify production build"
         run: pnpm build
