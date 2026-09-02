@@ -9,7 +9,21 @@
 	},
 	"homepage": "https://gridbox.dev",
 	"packageManager": "pnpm@11.25.0",
-	"scripts": {},
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"build:watch": "next build && next start",
+		"start": "next start",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format": "biome format .",
+		"format:fix": "biome format --write .",
+		"prepare": "husky",
+		"test": "vitest",
+		"test:ui": "vitest --ui",
+		"test:verbose": "vitest --reporter=verbose",
+		"test:coverage": "vitest run --coverage"
+	},
 	"dependencies": {
 		"@formatjs/intl-localematcher": "^0.8.13",
 		"@gsap/react": "^2.1.2",
