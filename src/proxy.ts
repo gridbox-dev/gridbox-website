@@ -9,25 +9,8 @@
 import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { type NextRequest, NextResponse } from 'next/server';
-import type { Language, LocaleCookie } from '@/types/i18n';
-
-/**
- * Supported locales in the application.
- */
-export const SUPPORTED_LOCALES: ReadonlyArray<Language> = ['es', 'en'] as const;
-
-/**
- * Fallback locale used when no matching preferred language is found.
- */
-export const DEFAULT_LOCALE: Language = 'es';
-
-/**
- * Persisted locale cookie configuration.
- */
-export const LOCALE_COOKIE_CONFIG: LocaleCookie = {
-	name: 'NEXT_LOCALE',
-	maxAge: 31536000,
-} as const;
+import type { Language } from '@/types/i18n';
+import { DEFAULT_LOCALE, LOCALE_COOKIE_CONFIG, SUPPORTED_LOCALES } from './config/i18n/constants';
 
 /**
  * Extracts the locale segment from a given URL pathname if it matches a supported locale.
