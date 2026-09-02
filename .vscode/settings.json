@@ -9,7 +9,6 @@
 		"node_modules": true,
 		".gitignore": true,
 		"LICENSE": true,
-		"next-env.d.ts": true,
 		"pnpm-lock.yaml": true,
 		".npmrc": true,
 		"commitlint.config.mjs": true,
@@ -21,7 +20,8 @@
 		".github": true,
 		".env.example": true,
 		"coverage": true,
-		".vscode": true
+		".vscode": true,
+		"next-env.d.ts": true
 	},
 
 	"hide-files.files": [
@@ -29,7 +29,6 @@
 		"node_modules",
 		".gitignore",
 		"LICENSE",
-		"next-env.d.ts",
 		"pnpm-lock.yaml",
 		".npmrc",
 		"commitlint.config.mjs",
@@ -41,6 +40,7 @@
 		".github",
 		".env.example",
 		"coverage",
-		".vscode"
+		".vscode",
+		"next-env.d.ts"
 	]
 }
