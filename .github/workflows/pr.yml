@@ -1,0 +1,65 @@
+#---------------------------------------------------------------------------------------------
+# Copyright (c) Gridbox Development SpA. All rights reserved.
+# No license available. See README in the project root for license information.
+# Gridbox Development Official Website.
+#---------------------------------------------------------------------------------------------
+
+name: "Branch Policy Enforcer"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+    branches:
+      - main
+      - staging
+      - development
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-gitflow:
+    name: "Enforce GitFlow Rules"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Verify PR Source Branch"
+        shell: bash
+        run: |
+          TARGET_BRANCH="${{ github.base_ref }}"
+          SOURCE_BRANCH="${{ github.head_ref }}"
+
+          echo "Validating PR: '$SOURCE_BRANCH' ➔ '$TARGET_BRANCH'"
+
+          case "$TARGET_BRANCH" in
+            main)
+              if [[ "$SOURCE_BRANCH" != "staging" && "$SOURCE_BRANCH" != hotfix/* ]]; then
+                echo "::error title=Invalid GitFlow Transition::The 'main' branch only accepts PRs from 'staging' or 'hotfix/*' branches. (Attempted: '$SOURCE_BRANCH')"
+                exit 1
+              fi
+              ;;
+
+            staging)
+              if [[ "$SOURCE_BRANCH" != "development" && "$SOURCE_BRANCH" != "main" ]]; then
+                echo "::error title=Invalid GitFlow Transition::The 'staging' branch only accepts PRs from 'development' or 'main'. (Attempted: '$SOURCE_BRANCH')"
+                exit 1
+              fi
+              ;;
+
+            development)
+              if [[ ! "$SOURCE_BRANCH" =~ ^(feature|bugfix|hotfix|improvement)/ && "$SOURCE_BRANCH" != "staging" ]]; then
+                echo "::error title=Invalid GitFlow Transition::The 'development' branch only accepts task branches (feature/*, bugfix/*, hotfix/*, improvement/*) or 'staging'. (Attempted: '$SOURCE_BRANCH')"
+                exit 1
+              fi
+              ;;
+
+            *)
+              echo "::warning title=Unmonitored Branch::No explicit GitFlow restriction configured for '$TARGET_BRANCH'."
+              ;;
+          esac
+
+          echo "GitFlow transition approved for '$SOURCE_BRANCH' ➔ '$TARGET_BRANCH'"
