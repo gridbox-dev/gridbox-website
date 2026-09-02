@@ -10,6 +10,8 @@
 	"homepage": "https://gridbox.dev",
 	"packageManager": "pnpm@11.25.0",
 	"scripts": {},
-	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"husky": "^9.1.7",
+		"lint-staged": "^17.4.1"
+	}
 }
