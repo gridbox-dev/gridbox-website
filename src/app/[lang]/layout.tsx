@@ -8,6 +8,8 @@ import type { JSX } from 'react/jsx-runtime';
 import { DEFAULT_LOCALE } from '@/config/i18n/constants';
 import { fontSans, fontSerif } from '@/config/ui/fonts';
 
+import '@/styles/globals.css';
+
 // biome-ignore lint/performance/noBarrelFile: False positive. It's not a barrel file. It's a single method in another module.
 export { generateMetadata } from './metadata';
 
