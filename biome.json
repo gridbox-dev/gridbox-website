@@ -1,0 +1,123 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"includes": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.mjs",
+			"**/*.json",
+			"**/*.md",
+			"**/*.css",
+			"!**/node_modules",
+			"!**/.next",
+			"!**/out",
+			"!**/build",
+			"!**/public"
+		],
+		"ignoreUnknown": true
+	},
+	"formatter": {
+		"enabled": true,
+		"formatWithErrors": false,
+		"attributePosition": "auto",
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 120
+	},
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "all",
+			"correctness": {
+				"preset": "all",
+				"noNodejsModules": "off",
+				"useImportExtensions": "off",
+				"useQwikValidLexicalScope": "off",
+				"useQwikClasslist": "off",
+				"noQwikUseVisibleTask": "off",
+				"useQwikMethodUsage": "off",
+				"useUniqueElementIds": "off",
+				"noProcessGlobal": "off",
+				"noUnusedVariables": {
+					"level": "warn",
+					"fix": "none"
+				}
+			},
+			"suspicious": "error",
+			"security": "error",
+			"performance": "error",
+			"complexity": {
+				"preset": "all",
+				"noExcessiveLinesPerFunction": "off",
+				"noExcessiveCognitiveComplexity": "off"
+			},
+			"style": {
+				"recommended": true
+			},
+			"a11y": "info",
+			"nursery": {
+				"recommended": true
+			}
+		},
+		"domains": {
+			"next": "recommended",
+			"react": "recommended"
+		}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.test.ts", "**/*.test.tsx", "**/*.spec.ts", "**/*.spec.tsx"],
+			"linter": {
+				"enabled": false
+			}
+		}
+	],
+	"assist": {
+		"actions": {
+			"source": {
+				"recommended": true,
+				"organizeImports": "on"
+			}
+		}
+	},
+
+	"javascript": {
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 120,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"semicolons": "always",
+			"quoteStyle": "single",
+			"jsxQuoteStyle": "single",
+			"bracketSameLine": false,
+			"bracketSpacing": true
+		}
+	},
+
+	"html": {
+		"formatter": {
+			"enabled": true,
+			"lineWidth": 120,
+			"indentStyle": "tab",
+			"indentWidth": 2,
+			"bracketSameLine": false
+		}
+	},
+
+	"css": {
+		"parser": {
+			"tailwindDirectives": true
+		},
+		"formatter": {
+			"enabled": true
+		}
+	}
+}
