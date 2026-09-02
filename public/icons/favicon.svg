@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 72 72">
+  <style>
+    .gridbox-icon { fill: #000000; }
+
+    @media (prefers-color-scheme: dark) {
+      .gridbox-icon { fill: #ffffff; }
+    }
+  </style>
+
+
+  <path class="gridbox-icon" d="m0 36 24-24 3 3L3 39zm6 6 24-24 3 3L9 45zm42-30L24 36 12 48l3 3 12-12 12-12 3 3-12 12-12 12 3 3 12-12 12-12 3 3-12 12 12 12 24-24z"/>
+</svg>
