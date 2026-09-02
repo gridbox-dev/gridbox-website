@@ -20,7 +20,8 @@
 		".env.example": true,
 		"coverage": true,
 		".vscode": true,
-		"next-env.d.ts": true
+		"next-env.d.ts": true,
+		".gitignore": true
 	},
 
 	"hide-files.files": [
@@ -39,6 +40,8 @@
 		".env.example",
 		"coverage",
 		".vscode",
-		"next-env.d.ts"
-	]
+		"next-env.d.ts",
+		".gitignore"
+	],
+	"typescript.tsdk": "node_modules\\typescript\\lib"
 }
