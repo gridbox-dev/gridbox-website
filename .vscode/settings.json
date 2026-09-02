@@ -7,7 +7,6 @@
 		"**/Thumbs.db": true,
 		".husky": true,
 		"node_modules": true,
-		".gitignore": true,
 		"LICENSE": true,
 		"pnpm-lock.yaml": true,
 		".npmrc": true,
@@ -27,7 +26,6 @@
 	"hide-files.files": [
 		".husky",
 		"node_modules",
-		".gitignore",
 		"LICENSE",
 		"pnpm-lock.yaml",
 		".npmrc",
