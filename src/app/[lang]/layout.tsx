@@ -7,6 +7,7 @@
 import type { JSX } from 'react/jsx-runtime';
 import { DEFAULT_LOCALE } from '@/config/i18n/constants';
 import { fontSans, fontSerif } from '@/config/ui/fonts';
+import { Shell } from './shell';
 
 import '@/styles/globals.css';
 
@@ -33,7 +34,9 @@ export default async function RootLayout(props: LayoutProps<'/[lang]'>): Promise
 
 	return (
 		<html lang={lang || DEFAULT_LOCALE} className={`${fontSans.variable} ${fontSerif.variable}`}>
-			<body>{children}</body>
+			<body>
+				<Shell>{children}</Shell>
+			</body>
 		</html>
 	);
 }
