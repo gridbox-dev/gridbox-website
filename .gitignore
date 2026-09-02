@@ -1,0 +1,37 @@
+#---------------------------------------------------------------------------------------------
+# Copyright (c) Gridbox Development SpA. All rights reserved.
+# No license available. See README in the project root for license information.
+# Gridbox Development Official Website.
+#---------------------------------------------------------------------------------------------
+
+# Dependencies
+/node_modules
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Miscellaneous
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+.pnpm-debug.log*
+
+# Env Files
+.env*
+!.env.example
+
+# Vercel
+.vercel
+
+# Typescript
+*.tsbuildinfo
+next-env.d.ts
