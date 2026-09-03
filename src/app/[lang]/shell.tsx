@@ -7,6 +7,8 @@
 import type { JSX, PropsWithChildren } from 'react';
 import { Box } from '@/components/base/box';
 import { Scroller } from '@/components/layout/scroller';
+import { GridOverlay } from '@/components/tools/grid-overlay';
+import { env } from '@/config/env';
 
 /**
  * Fundamental layout composition and application shell container.
@@ -21,6 +23,8 @@ export const Shell = (props: PropsWithChildren): JSX.Element => {
 
 	return (
 		<Box as='div' data-layout='shell'>
+			{!env.IS_PRODUCTION && <GridOverlay />}
+
 			<Scroller>
 				<Box as='main' data-layout='main-content'>
 					{children}
