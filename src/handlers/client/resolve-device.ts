@@ -4,15 +4,14 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
-/**
- * Required and shared properties in the base components.
- */
-export interface BaseComponent {
-	/**
-	 * Theme context modifier for the component.
-	 * When set to dark, appends the dark-mode utility class to the node.
-	 * @default false
-	 */
-	dark?: boolean;
-}
+import type { Breakpoint, Device } from '@/types/layout';
 
+/**
+ * Maps a {@link Breakpoint} token to a coarse {@link Device} classification.
+ *
+ * @param breakpoint - The active layout breakpoint token.
+ * @returns The coarse device category.
+ */
+export const resolveDevice = (breakpoint: Breakpoint): Device => {
+	return breakpoint === 'mobile' || breakpoint === 'tablet' ? 'mobile' : 'desktop';
+};

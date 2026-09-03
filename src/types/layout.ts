@@ -5,14 +5,11 @@
  *--------------------------------------------------------------------------------------------*/
 
 /**
- * Required and shared properties in the base components.
+ * Supported responsive breakpoint design tokens.
  */
-export interface BaseComponent {
-	/**
-	 * Theme context modifier for the component.
-	 * When set to dark, appends the dark-mode utility class to the node.
-	 * @default false
-	 */
-	dark?: boolean;
-}
+export type Breakpoint = 'mobile' | 'tablet' | 'laptop' | 'desktop';
 
+/**
+ * Normalized target device classification.
+ */
+export type Device = 'mobile' | 'desktop';
