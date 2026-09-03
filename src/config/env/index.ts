@@ -37,7 +37,10 @@ export const env = createEnv({
 		 * The base canonical URL for the web application instance.
 		 * Must represent a strictly valid HTTP/HTTPS URL string format.
 		 */
-		NEXT_PUBLIC_APP_BASE_URL: z.url().refine((url) => url.startsWith('http://') || url.startsWith('https://')),
+		NEXT_PUBLIC_APP_BASE_URL: z
+			.url()
+			.refine((url) => url.startsWith('http://') || url.startsWith('https://'))
+			.default('http://localhost:3000'),
 	},
 
 	/**
