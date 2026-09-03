@@ -19,9 +19,10 @@
 		".github": true,
 		".env.example": true,
 		"coverage": true,
-		".vscode": true,
 		"next-env.d.ts": true,
-		".gitignore": true
+		".gitignore": true,
+		".vscode": true,
+		"tsconfig.tsbuildinfo": true
 	},
 
 	"hide-files.files": [
@@ -39,9 +40,12 @@
 		".github",
 		".env.example",
 		"coverage",
-		".vscode",
 		"next-env.d.ts",
-		".gitignore"
+		".gitignore",
+		".vscode",
+		"tsconfig.tsbuildinfo"
 	],
-	"typescript.tsdk": "node_modules\\typescript\\lib"
+	"typescript.tsdk": "node_modules\\typescript\\lib",
+	"tailwindCSS.experimental.classRegex": [["tv\\(\\{([\\s\\S]*?)\\}\\)", "'([^']*)'"]],
+	"typescript.preferences.autoImportFileExcludePatterns": ["**/node_modules/tailwind-variants"]
 }
