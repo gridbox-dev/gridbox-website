@@ -1,0 +1,28 @@
+{
+	"theme": "tribe",
+	"active": "default",
+	"activateOnStartup": true,
+	"keepExistingTerminals": false,
+	"sessions": {
+		"default": [
+			{
+				"name": "runtime",
+				"shellPath": "powershell.exe",
+				"icon": "play",
+				"color": "terminal.ansiRed"
+			},
+			{
+				"name": "development",
+				"shellPath": "powershell.exe",
+				"icon": "code",
+				"color": "terminal.ansiBlue"
+			},
+			{
+				"name": "testing",
+				"shellPath": "powershell.exe",
+				"icon": "beaker",
+				"color": "terminal.ansiGreen"
+			}
+		]
+	}
+}
