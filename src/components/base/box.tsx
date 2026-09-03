@@ -12,7 +12,7 @@ import type { BaseComponent } from '@/types/components';
 /**
  * Base props specific to the {@link Box} component.
  */
-export type BoxBaseProps = BaseComponent & {
+type BoxBaseProps = BaseComponent & {
 	/**
 	 * When true, delegates rendering to its direct child via Radix UI Slot,
 	 * merging props, ref, and event handlers onto that child.

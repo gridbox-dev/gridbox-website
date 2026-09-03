@@ -6,6 +6,7 @@
 
 import type { JSX, PropsWithChildren } from 'react';
 import { Box } from '@/components/base/box';
+import { Scroller } from '@/components/layout/scroller';
 
 /**
  * Fundamental layout composition and application shell container.
@@ -20,9 +21,11 @@ export const Shell = (props: PropsWithChildren): JSX.Element => {
 
 	return (
 		<Box as='div' data-layout='shell'>
-			<Box as='main' data-layout='main-content'>
-				{children}
-			</Box>
+			<Scroller>
+				<Box as='main' data-layout='main-content'>
+					{children}
+				</Box>
+			</Scroller>
 		</Box>
 	);
 };
