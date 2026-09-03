@@ -7,19 +7,22 @@
 		"default": [
 			{
 				"name": "runtime",
-				"shellPath": "powershell.exe",
+				"shellPath": "pwsh.exe",
+				"shellArgs": ["-NoExit"],
 				"icon": "play",
 				"color": "terminal.ansiRed"
 			},
 			{
 				"name": "development",
-				"shellPath": "powershell.exe",
+				"shellPath": "pwsh.exe",
+				"shellArgs": ["-NoExit"],
 				"icon": "code",
 				"color": "terminal.ansiBlue"
 			},
 			{
 				"name": "testing",
-				"shellPath": "powershell.exe",
+				"shellPath": "pwsh.exe",
+				"shellArgs": ["-NoExit"],
 				"icon": "beaker",
 				"color": "terminal.ansiGreen"
 			}
