@@ -8,7 +8,15 @@
 
 import { Slot } from '@radix-ui/react-slot';
 import NextImage, { type ImageProps as NextImageProps } from 'next/image';
-import { type ComponentPropsWithRef, type CSSProperties, type ElementType, type JSX, type Ref, useState } from 'react';
+import {
+	type ComponentPropsWithRef,
+	type CSSProperties,
+	type ElementType,
+	type JSX,
+	type Ref,
+	type SyntheticEvent,
+	useState,
+} from 'react';
 import { useObjectRef } from 'react-aria';
 import { handleTheme } from '@/handlers/client/handle-theme';
 import type { BaseComponent } from '@/types/components';
@@ -77,11 +85,11 @@ export const Image = <E extends ElementType = typeof NextImage>(props: ImageProp
 			data-loading={status === 'loading' || undefined}
 			data-loaded={status === 'loaded' || undefined}
 			data-error={status === 'error' || undefined}
-			onLoad={(event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+			onLoad={(event: SyntheticEvent<HTMLImageElement, Event>) => {
 				setStatus('loaded');
 				onLoad?.(event);
 			}}
-			onError={(event: React.SyntheticEvent<HTMLImageElement, Event>) => {
+			onError={(event: SyntheticEvent<HTMLImageElement, Event>) => {
 				setStatus('error');
 				onError?.(event);
 			}}
