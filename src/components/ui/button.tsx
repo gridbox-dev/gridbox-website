@@ -20,10 +20,10 @@ const styles = tv({
 			'before:absolute focus-visible:outline-2 focus-visible:outline-offset-2',
 			'disabled:cursor-not-allowed disabled:opacity-50',
 			'active:scale-[0.97] active:duration-75',
-			'*:data-icon:pointer-events-none *:data-icon:size-5 *:data-icon:shrink-0 *:data-icon:transition-inherit-all',
+			'*:data-icon:pointer-events-none *:data-icon:size-20 *:data-icon:shrink-0 *:data-icon:transition-inherit-all',
 		].join(' '),
 		label: 'font-medium px-2',
-		icon: 'pointer-events-none size-5 shrink-0 transition-inherit-all',
+		icon: 'pointer-events-none size-20 shrink-0 transition-inherit-all',
 	},
 
 	variants: {
