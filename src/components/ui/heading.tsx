@@ -45,7 +45,7 @@ export type HeadingElement = Extract<TextElement, 'h1' | 'h2' | 'h3' | 'h4' | 'h
 
 /**
  * Props for the high-level UI {@link Heading} component.
- * Extends {@link BaseTextProps} while restricting the `as` polymorphic prop strictly to heading elements
+ * Extends {@link TextProps} while restricting the `as` polymorphic prop strictly to heading elements
  * and providing predefined typography scaling variants, color tokens, and alignment options.
  *
  * @typeParam E - The underlying heading HTML element tag to render. Defaults to `'h2'`.
@@ -79,7 +79,7 @@ export type HeadingProps<E extends HeadingElement = 'h2'> = TextProps<E> & {
 
 /**
  * Semantic typography component for section headings and titles.
- * Wraps low-level `BaseText` with predefined responsive typography variants, semantic color tokens,
+ * Wraps low-level `Text` with predefined responsive typography variants, semantic color tokens,
  * alignment options, and strict heading element enforcement.
  *
  * @typeParam E - The underlying heading HTML element tag to render.

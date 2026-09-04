@@ -85,7 +85,6 @@ export const Separator = <E extends ElementType = 'hr'>(props: SeparatorProps<E>
 			{...rest}
 			ref={objectRef}
 			data-primitive='separator'
-			data-orientation={orientation}
 			className={handleTheme(dark, className)}
 		>
 			{children}
