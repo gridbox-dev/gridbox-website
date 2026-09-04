@@ -4,6 +4,8 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
+import type { FC, ReactNode } from 'react';
+
 /**
  * Required and shared properties in the base components.
  */
@@ -15,3 +17,8 @@ export interface BaseComponent {
 	 */
 	dark?: boolean;
 }
+
+/**
+ * Component function or rendered node to display inside some components.
+ */
+export type ComponentIcon = FC<{ className?: string }> | ReactNode;
