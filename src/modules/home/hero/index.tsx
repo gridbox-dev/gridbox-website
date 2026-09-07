@@ -7,6 +7,7 @@
 import type { JSX } from 'react';
 import type { BaseComponent } from '@/types/components';
 import { HeroActions } from './components/hero-actions';
+import { HeroBackground } from './components/hero-background';
 import { HeroContainer } from './components/hero-container';
 import { HeroHeader } from './components/hero-header';
 import { HeroWrapper } from './components/hero-wrapper';
@@ -36,7 +37,9 @@ export const HomeHero = (props: HomeHeroProps): JSX.Element => {
 				</HeroActions>
 			</HeroContainer>
 
-			<HeroContainer layout='full'>Home hero mockup</HeroContainer>
+			<HeroContainer layout='full'>
+				<HeroBackground />
+			</HeroContainer>
 		</HeroWrapper>
 	);
 };
