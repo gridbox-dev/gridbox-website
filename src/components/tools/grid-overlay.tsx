@@ -14,7 +14,7 @@ import type { Breakpoint } from '@/types/layout';
 
 const styles = tv({
 	slots: {
-		base: 'fixed left-1/2 -translate-x-1/2 z-10000 h-svh w-full max-w-container pointer-events-none select-none',
+		base: 'fixed inset-x-0 mx-auto z-10000 h-svh w-full max-w-container pointer-events-none select-none',
 		inner: 'relative flex justify-between shrink-0 size-full',
 		margin: 'h-full w-16 shrink-0 bg-utility-red-600/20 tablet:w-32',
 		grid: 'flex justify-between gap-16 size-full tablet:gap-24',
@@ -46,7 +46,7 @@ const getColumnCount = (breakpoint: Breakpoint): number => {
  * @returns The rendered grid overlay node or null if hidden.
  */
 export const GridOverlay = (): JSX.Element | null => {
-	const [isVisible, setIsVisible] = useState<boolean>(false);
+	const [isVisible, setIsVisible] = useState<boolean>(true);
 	const { breakpoint, isHydrated } = useBreakpoint();
 
 	const { base, inner, margin, grid, column } = styles();
