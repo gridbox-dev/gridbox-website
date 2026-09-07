@@ -8,6 +8,7 @@
 	html {
 		background-color: var(--background-color-primary);
 		color: var(--color-text-primary);
+		overflow-x: hidden;
 	}
 
 	html,
