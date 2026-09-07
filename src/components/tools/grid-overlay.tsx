@@ -46,7 +46,7 @@ const getColumnCount = (breakpoint: Breakpoint): number => {
  * @returns The rendered grid overlay node or null if hidden.
  */
 export const GridOverlay = (): JSX.Element | null => {
-	const [isVisible, setIsVisible] = useState<boolean>(true);
+	const [isVisible, setIsVisible] = useState<boolean>(false);
 	const { breakpoint, isHydrated } = useBreakpoint();
 
 	const { base, inner, margin, grid, column } = styles();
