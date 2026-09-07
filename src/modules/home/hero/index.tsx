@@ -10,6 +10,7 @@ import { HeroActions } from './components/hero-actions';
 import { HeroBackground } from './components/hero-background';
 import { HeroContainer } from './components/hero-container';
 import { HeroHeader } from './components/hero-header';
+import { HeroMockup } from './components/hero-mockup';
 import { HeroWrapper } from './components/hero-wrapper';
 
 export interface HomeHeroProps extends BaseComponent {}
@@ -38,6 +39,7 @@ export const HomeHero = (props: HomeHeroProps): JSX.Element => {
 			</HeroContainer>
 
 			<HeroContainer layout='full'>
+				<HeroMockup />
 				<HeroBackground />
 			</HeroContainer>
 		</HeroWrapper>
