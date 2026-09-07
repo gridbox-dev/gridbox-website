@@ -18,7 +18,7 @@ const styles = tv({
 		layout: {
 			contained: {
 				base: 'h-fit max-w-container px-16 tablet:px-32',
-				content: 'items-center h-fit tablet:gap-48',
+				content: 'items-center h-fit laptop:gap-48',
 			},
 
 			full: {
