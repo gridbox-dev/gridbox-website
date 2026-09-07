@@ -6,6 +6,7 @@
 
 import type { JSX } from 'react';
 import type { BaseComponent } from '@/types/components';
+import { HeroActions } from './components/hero-actions';
 import { HeroContainer } from './components/hero-container';
 import { HeroHeader } from './components/hero-header';
 import { HeroWrapper } from './components/hero-wrapper';
@@ -28,6 +29,11 @@ export const HomeHero = (props: HomeHeroProps): JSX.Element => {
 						escalar operaciones y acelerar su ventaja competitiva.
 					</HeroHeader.Paragraph>
 				</HeroHeader>
+
+				<HeroActions>
+					<HeroActions.CTA hierarchy='scheduling'>Agendar reunión</HeroActions.CTA>
+					<HeroActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeroActions.CTA>
+				</HeroActions>
 			</HeroContainer>
 
 			<HeroContainer layout='full'>Home hero mockup</HeroContainer>
