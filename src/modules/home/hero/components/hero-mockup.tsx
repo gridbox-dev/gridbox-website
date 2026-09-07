@@ -10,14 +10,19 @@ import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
 	slots: {
-		base: 'mobile:max-tablet:scale-[0.620155] tablet:max-laptop:scale-[0.826873] origin-top-left',
+		base: [
+			'relative z-10 shrink-0 transition-transform duration-75 ease-out',
+			'mobile:max-tablet:scale-[0.62] origin-top-left',
+			'tablet:max-laptop:scale-[0.82] origin-top-left',
+			'laptop:max-desktop:scale-[0.88] laptop:origin-top',
+			'desktop:scale-100',
+		].join(' '),
 	},
 });
 
 /**
  * Specialized screen mockup instance for the landing page hero section.
- * Wraps a {@link ScreenMockup} frame with responsive matrix scaling transform steps
- * to maintain crisp pixel density across viewports.
+ * Applies responsive scale transforms and transform-origins aligned with the design system.
  *
  * @returns The rendered hero screen mockup node.
  */
@@ -25,12 +30,7 @@ export const HeroMockup = (): JSX.Element => {
 	const { base } = styles();
 
 	return (
-		<ScreenMockup
-			data-hero='screen-mockup'
-			classNames={{
-				container: base(),
-			}}
-		>
+		<ScreenMockup data-hero='screen-mockup' classNames={{ container: base() }}>
 			Hero screen mockup
 		</ScreenMockup>
 	);

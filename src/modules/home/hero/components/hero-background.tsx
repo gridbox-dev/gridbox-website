@@ -13,7 +13,7 @@ const styles = tv({
 		base: [
 			'absolute overflow-hidden pointer-events-none select-none left-0 z-0',
 			'flex flex-col items-center h-full w-full pt-48',
-			'tablet:pt-96',
+			'tablet:pt-64 laptop:pt-96',
 		].join(' '),
 		surface: 'relative size-full bg-linear-to-b from-20% from-bg-secondary to-40% to-bg-primary',
 		pattern: [
