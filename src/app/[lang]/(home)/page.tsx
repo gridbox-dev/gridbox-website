@@ -6,6 +6,7 @@
 
 import type { JSX } from 'react';
 import { Page } from '@/components/layout/page';
+import { HomeHero } from '@/modules/home/hero';
 
 /**
  * Root home page view component.
@@ -18,7 +19,7 @@ export default async function HomePage(props: PageProps<'/[lang]'>): Promise<JSX
 
 	return (
 		<Page id='home-page' background='primary'>
-			HomePage
+			<HomeHero />
 		</Page>
 	);
 }

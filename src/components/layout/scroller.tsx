@@ -44,6 +44,9 @@ export const Scroller = (props: ScrollerProps): JSX.Element => {
 
 	useGSAP(
 		() => {
+			document.documentElement.style.overflow = 'hidden';
+			document.body.style.overflow = 'hidden';
+
 			if (!isHydrated) return;
 
 			let smoother: ScrollSmoother | null = null;
@@ -59,14 +62,21 @@ export const Scroller = (props: ScrollerProps): JSX.Element => {
 					effects: true,
 					smoothTouch: false,
 				});
+
+				smoother.paused(false);
 			} else if (wrapper && content) {
 				gsap.set([wrapper, content], { clearProps: 'all' });
 			}
+
+			document.documentElement.style.removeProperty('overflow');
+			document.body.style.removeProperty('overflow');
 
 			ScrollTrigger.refresh();
 
 			return () => {
 				if (smoother) smoother.kill();
+				document.documentElement.style.removeProperty('overflow');
+				document.body.style.removeProperty('overflow');
 			};
 		},
 		{ dependencies: [device, isHydrated], scope: wrapperRef, revertOnUpdate: true },

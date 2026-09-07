@@ -50,7 +50,7 @@
 	}
 
 	::selection {
-		background-color: var(--color-alpha-black);
+		background-color: var(--color-utility-neutral-900);
 		color: var(--color-alpha-white);
 	}
 
