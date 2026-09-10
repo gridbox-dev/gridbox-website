@@ -56,7 +56,12 @@ export const HomeHero = (props: HomeHeroProps): JSX.Element => {
 
 					<HeroActions>
 						{content.callToActions.map((cta) => (
-							<HeroActions.CTA key={cta.type} hierarchy={cta.type as CTAHierarchy} aria-label={cta.ariaLabel}>
+							<HeroActions.CTA
+								key={cta.type}
+								hierarchy={cta.type as CTAHierarchy}
+								aria-label={cta.ariaLabel}
+								data-animate='fade'
+							>
 								{cta.label}
 							</HeroActions.CTA>
 						))}

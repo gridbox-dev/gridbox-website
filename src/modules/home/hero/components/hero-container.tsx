@@ -10,7 +10,7 @@ import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
 	slots: {
-		base: 'relative overflow-hidden flex flex-col items-center gap-32 w-full',
+		base: 'relative flex flex-col items-center gap-32 w-full',
 		content: 'flex flex-col gap-32 w-full',
 	},
 
@@ -22,7 +22,7 @@ const styles = tv({
 			},
 
 			full: {
-				base: 'h-360 tablet:h-480 laptop:h-640',
+				base: 'overflow-hidden h-360 tablet:h-480 laptop:h-640',
 				content: 'h-full pl-16 tablet:pl-32 laptop:items-center laptop:px-32 laptop:max-w-container',
 			},
 		},

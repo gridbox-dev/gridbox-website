@@ -26,14 +26,29 @@ export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => 
 	useGSAP(
 		() => {
 			const header = '[data-animate="hero-header"]';
-			const fade = gsap.utils.toArray('[data-animate="fade"]');
+			const fade = gsap.utils.toArray<HTMLElement>('[data-animate="fade"]');
 
-			gsap.fromTo(fade, { opacity: 0 }, { opacity: 1, stagger: 0.06, ease: 'power3.inOut', duration: 0.6 });
+			gsap.fromTo(
+				fade,
+				{ opacity: 0, y: 5, filter: 'blur(3px)' },
+				{
+					opacity: 1,
+					y: 0,
+					filter: 'blur(0px)',
+					stagger: 0.06,
+					ease: 'power3.out',
+					duration: 0.6,
+					onComplete: () => {
+						gsap.set(fade, { clearProps: 'all' });
+					},
+				},
+			);
 
 			gsap.to(header, {
 				opacity: 0,
 				y: -20,
 				scale: 0.98,
+				filter: 'blur(3px)',
 				ease: 'power2.out',
 				scrollTrigger: {
 					trigger: containerRef.current,
