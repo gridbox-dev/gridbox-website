@@ -1,4 +1,5 @@
 {
+    "$schema": "../schemas/metadata.json",
 	"title": {
 		"default": "Gridbox - Desarrollo de software y consultoría estratégica TI en Chile"
 	},

@@ -5,43 +5,72 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX } from 'react';
+import { MotionDashboard } from '@/assets/motion/dashboard';
+import { VisuallyHidden } from '@/components/base/visually-hidden';
+import type { CTAHierarchy } from '@/components/ui/cta';
+import type { InferDictionary } from '@/config/i18n';
 import type { BaseComponent } from '@/types/components';
 import { HeroActions } from './components/hero-actions';
+import { HeroAnimationProvider } from './components/hero-animation-provider';
 import { HeroBackground } from './components/hero-background';
 import { HeroContainer } from './components/hero-container';
 import { HeroHeader } from './components/hero-header';
 import { HeroMockup } from './components/hero-mockup';
 import { HeroWrapper } from './components/hero-wrapper';
 
-export interface HomeHeroProps extends BaseComponent {}
+/**
+ * Properties for the {@link HomeHero} server component.
+ * Extends base component interfaces with localized content attributes.
+ */
+export interface HomeHeroProps extends BaseComponent {
+	     /**
+		 * Localized dictionary content for the landing hero section.
+		 */
+		content: InferDictionary<'home'>['hero'];
+}
 
+/**
+ * Primary landing page hero section.
+ * Coordinates localized copy, call-to-action triggers, background layers, and
+ * wraps the layout in a client animation provider for entrance and pinning effects.
+ *
+ * @param props - Component options defined by {@link HomeHeroProps}.
+ * @returns The rendered server component node.
+ */
 export const HomeHero = (props: HomeHeroProps): JSX.Element => {
-	const { dark } = props;
+	const { dark, content } = props;
 
 	return (
-		<HeroWrapper id='inicio' dark={dark} aria-labelledby='hero-heading'>
-			<HeroContainer layout='contained'>
-				<HeroHeader>
-					<HeroHeader.Heading id='hero-heading'>
-						Desarrollo de software a medida y consultoría estratégica TI en Chile
-					</HeroHeader.Heading>
+		<HeroAnimationProvider>
+			<HeroWrapper id='inicio' dark={dark} aria-labelledby='hero-heading'>
+				<HeroContainer layout='contained' data-animate='hero-header'>
+					<HeroHeader>
+						<HeroHeader.Heading id='hero-heading' data-animate='fade'>
+							{content.title}
+						</HeroHeader.Heading>
 
-					<HeroHeader.Paragraph>
-						Diseñamos productos digitales, arquitecturas robustas e integraciones complejas para empresas que buscan
-						escalar operaciones y acelerar su ventaja competitiva.
-					</HeroHeader.Paragraph>
-				</HeroHeader>
+						<HeroHeader.Paragraph data-animate='fade'>{content.description}</HeroHeader.Paragraph>
+					</HeroHeader>
 
-				<HeroActions>
-					<HeroActions.CTA hierarchy='scheduling'>Agendar reunión</HeroActions.CTA>
-					<HeroActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeroActions.CTA>
-				</HeroActions>
-			</HeroContainer>
+					<VisuallyHidden as='h2'>{content.subtitle}</VisuallyHidden>
 
-			<HeroContainer layout='full'>
-				<HeroMockup />
-				<HeroBackground />
-			</HeroContainer>
-		</HeroWrapper>
+					<HeroActions>
+						{content.callToActions.map((cta) => (
+							<HeroActions.CTA key={cta.type} hierarchy={cta.type as CTAHierarchy} aria-label={cta.ariaLabel}>
+								{cta.label}
+							</HeroActions.CTA>
+						))}
+					</HeroActions>
+				</HeroContainer>
+
+				<HeroContainer layout='full'>
+					<HeroMockup data-animate='slide'>
+						<MotionDashboard {...content.mockup} />
+					</HeroMockup>
+
+					<HeroBackground />
+				</HeroContainer>
+			</HeroWrapper>
+		</HeroAnimationProvider>
 	);
 };

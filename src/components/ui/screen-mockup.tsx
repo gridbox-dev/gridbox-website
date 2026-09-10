@@ -13,7 +13,7 @@ const styles = tv({
 		base: 'relative z-20 flex flex-col gap-6 h-193.5 w-344 max-w-none shrink-0 p-8 bg-secondary border border-secondary/50 shadow-xl rounded-16 pointer-events-none select-none',
 		controlsGroup: 'flex h-fit w-full gap-8 px-6 py-4',
 		control: 'size-12 rounded-9999',
-		content: 'flex flex-col items-center size-full bg-primary rounded-10 border border-secondary/40',
+		content: 'overflow-hidden flex flex-col items-center size-full bg-primary rounded-10 border border-tertiary',
 	},
 
 	variants: {

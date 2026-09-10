@@ -5,7 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX } from 'react';
-import { ScreenMockup } from '@/components/ui/screen-mockup';
+import { ScreenMockup, type ScreenMockupProps } from '@/components/ui/screen-mockup';
 import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
@@ -15,7 +15,6 @@ const styles = tv({
 			'mobile:max-tablet:scale-[0.62] origin-top-left',
 			'tablet:max-laptop:scale-[0.82] origin-top-left',
 			'laptop:max-desktop:scale-[0.88] laptop:origin-top',
-			'desktop:scale-100',
 		].join(' '),
 	},
 });
@@ -26,12 +25,13 @@ const styles = tv({
  *
  * @returns The rendered hero screen mockup node.
  */
-export const HeroMockup = (): JSX.Element => {
+export const HeroMockup = (props: ScreenMockupProps): JSX.Element => {
+	const { children, ...rest } = props;
 	const { base } = styles();
 
 	return (
-		<ScreenMockup data-hero='screen-mockup' classNames={{ container: base() }}>
-			Hero screen mockup
+		<ScreenMockup {...rest} data-hero='screen-mockup' classNames={{ container: base() }}>
+			{children}
 		</ScreenMockup>
 	);
 };

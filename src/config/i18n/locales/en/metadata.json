@@ -1,4 +1,5 @@
 {
+	"$schema": "../schemas/metadata.json",
 	"title": {
 		"default": "Gridbox - Software Development and Strategic IT Consulting in Chile"
 	},

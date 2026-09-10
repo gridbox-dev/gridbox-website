@@ -1,0 +1,24 @@
+{
+	"$schema": "https://json-schema.org/draft-07/schema",
+	"type": "object",
+	"properties": {
+		"$schema": {
+			"type": "string"
+		},
+		"title": {
+			"type": "object",
+			"properties": {
+				"default": { "type": "string" }
+			},
+			"required": ["default"],
+			"additionalProperties": false
+		},
+		"description": { "type": "string" },
+		"keywords": {
+			"type": "array",
+			"items": { "type": "string" }
+		}
+	},
+	"required": ["title", "description", "keywords"],
+	"additionalProperties": false
+}

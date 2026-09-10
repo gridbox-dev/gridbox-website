@@ -1,0 +1,53 @@
+{
+	"hero": {
+		"title": "Desarrollo de software a medida y consultoría estratégica TI en Chile",
+		"subtitle": "Somos la empresa líder en ingeniería de software empresarial B2B, arquitectura Cloud y desarrollo de aplicaciones web en Latinoamérica, enfocados en aportar al crecimiento tecnológico sostenible de empresas de la región.",
+		"description": "Diseñamos productos digitales, arquitecturas robustas e integraciones complejas para empresas que buscan escalar operaciones y acelerar su ventaja competitiva.",
+		"callToActions": [
+			{
+				"type": "scheduling",
+				"label": "Agendar reunión",
+				"ariaLabel": "Agendar una reunión de asesoría técnica con el equipo de Gridbox"
+			},
+			{
+				"type": "conversion",
+				"label": "Solicitar presupuesto",
+				"ariaLabel": "Solicitar una cotización o presupuesto para un proyecto de software"
+			}
+		],
+		"mockup": {
+			"header": {
+				"title": "Tu Empresa SpA",
+				"actions": {
+					"customize": "Personalizar",
+					"export": "Exportar"
+				}
+			},
+			"widgets": {
+				"ROICard": {
+					"title": "Impacto de negocio",
+					"description": "Retorno de inversión acumulado en plataformas activas.",
+					"months": ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+				},
+				"retentionCard": {
+					"title": "Crecimiento anual",
+					"description": "Comparación con periodo anterior.",
+					"metric": {
+						"badge": "Retención",
+						"title": "Retención de clientes",
+						"description": "Tasa de continuidad en contratos y plataformas activas."
+					}
+				},
+				"clientsTable": {
+					"title": "Cuentas clave y continuidad de servicio",
+					"description": "Resumen de contratos activos, renovaciones pendientes e índice de satisfacción del cliente.",
+					"actions": {
+						"all": "Ver todos",
+						"active": "Activos",
+						"archive": "Archivados"
+					}
+				}
+			}
+		}
+	}
+}

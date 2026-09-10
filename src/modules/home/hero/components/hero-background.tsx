@@ -15,10 +15,10 @@ const styles = tv({
 			'flex flex-col items-center h-full w-full pt-48',
 			'tablet:pt-64 laptop:pt-96',
 		].join(' '),
-		surface: 'relative size-full bg-linear-to-b from-20% from-bg-secondary to-40% to-bg-primary',
+		surface: 'relative size-full bg-linear-to-b from-utility-brand-50 to-bg-primary',
 		pattern: [
 			'absolute inset-0 z-10 size-full pointer-events-none',
-			'bg-[radial-gradient(color-mix(in_srgb,var(--color-alpha-black)_5%,transparent)_1px,transparent_1px)]',
+			'bg-[radial-gradient(color-mix(in_srgb,var(--color-alpha-black)_4%,transparent)_1px,transparent_1px)]',
 			'bg-size-[4px_4px] tablet:bg-size-[6px_6px]',
 			'mask-radial-gradient',
 		].join(' '),

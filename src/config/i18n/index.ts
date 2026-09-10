@@ -17,9 +17,11 @@ import { DEFAULT_LOCALE } from './constants';
 const dictionaries = {
 	es: {
 		metadata: async () => import('./locales/es/metadata.json').then((m) => m.default),
+		home: async () => import('./locales/es/home.json').then((m) => m.default),
 	},
 	en: {
 		metadata: async () => import('./locales/en/metadata.json').then((m) => m.default),
+		home: async () => import('./locales/en/home.json').then((m) => m.default),
 	},
 } as const satisfies Record<Language, Record<string, () => Promise<unknown>>>;
 

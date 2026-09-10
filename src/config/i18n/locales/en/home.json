@@ -1,0 +1,53 @@
+{
+	"hero": {
+		"title": "Custom Software Development and IT Consulting in Chile",
+		"subtitle": "We are the leading company in B2B enterprise software engineering, cloud architecture, and web application development in Latin America, focused on contributing to the sustainable technological growth of companies in the region.",
+		"description": "We design digital products, robust architectures, and complex integrations for companies looking to scale operations and accelerate their competitive advantage.",
+		"callToActions": [
+			{
+				"type": "scheduling",
+				"label": "Schedule a meeting",
+				"ariaLabel": "Schedule a technical consultation meeting with the Gridbox team"
+			},
+			{
+				"type": "conversion",
+				"label": "Request a quote",
+				"ariaLabel": "Request a price quote or proposal for a software project"
+			}
+		],
+		"mockup": {
+			"header": {
+				"title": "Your Company Inc",
+				"actions": {
+					"customize": "Customize",
+					"export": "Export"
+				}
+			},
+			"widgets": {
+				"ROICard": {
+					"title": "Business impact",
+					"description": "Cumulative return on investment across active platforms.",
+					"months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+				},
+				"retentionCard": {
+					"title": "Annual growth",
+					"description": "Comparison with previous period.",
+					"metric": {
+						"badge": "Retention",
+						"title": "Client retention",
+						"description": "Continuity rate for contracts and active platforms."
+					}
+				},
+				"clientsTable": {
+					"title": "Key accounts and service continuity",
+					"description": "Summary of active contracts, pending renewals, and customer satisfaction index.",
+					"actions": {
+						"all": "View all",
+						"active": "Active",
+						"archive": "Archived"
+					}
+				}
+			}
+		}
+	}
+}
