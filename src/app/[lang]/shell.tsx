@@ -9,6 +9,7 @@ import { Box } from '@/components/base/box';
 import { Scroller } from '@/components/layout/scroller';
 import { GridOverlay } from '@/components/tools/grid-overlay';
 import { env } from '@/config/env';
+import { Header } from '@/modules/layout/header';
 
 /**
  * Fundamental layout composition and application shell container.
@@ -26,6 +27,8 @@ export const Shell = (props: PropsWithChildren): JSX.Element => {
 			{!env.IS_PRODUCTION && <GridOverlay />}
 
 			<Scroller>
+				<Header />
+
 				<Box as='main' data-layout='main-content'>
 					{children}
 				</Box>
