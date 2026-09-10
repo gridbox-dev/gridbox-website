@@ -13,7 +13,7 @@ const styles = tv({
 	slots: {
 		base: 'flex flex-col items-center justify-center w-full bg-primary border-b border-tertiary',
 		inner:
-			'flex items-center justify-between h-fit w-full max-w-container pl-16 pr-8 tablet:pl-32 tablet:pr-24 laptop:px-32',
+			'flex items-center justify-between h-fit w-full max-w-container pl-16 pr-8 tablet:pl-32 tablet:pr-24',
 	},
 });
 
