@@ -44,7 +44,7 @@ export const HeaderAnimationProvider = (props: PropsWithChildren): JSX.Element =
 				invalidateOnRefresh: true,
 			});
 		},
-		{ scope: containerRef },
+		{ scope: containerRef, dependencies: [device, isHydrated], revertOnUpdate: true },
 	);
 
 	return (
