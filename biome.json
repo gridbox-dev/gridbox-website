@@ -37,7 +37,7 @@
 			"preset": "all",
 			"correctness": {
 				"preset": "all",
-                "noUnresolvedImports": "off",
+				"noUnresolvedImports": "off",
 				"noNodejsModules": "off",
 				"useImportExtensions": "off",
 				"useQwikValidLexicalScope": "off",
