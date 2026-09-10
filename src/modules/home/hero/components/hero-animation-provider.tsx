@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { type JSX, type PropsWithChildren, useRef } from 'react';
 import { Box } from '@/components/base/box';
+import { HEADER_HEIGHT } from '@/config/constants/header-height';
 
 /**
  * Client-side animation provider coordinating entry sequences and ScrollTrigger pinning effects.
@@ -36,7 +37,7 @@ export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => 
 				ease: 'power2.out',
 				scrollTrigger: {
 					trigger: containerRef.current,
-					start: 'top 64px',
+					start: `top ${HEADER_HEIGHT}`,
 					end: 'center top',
 					scrub: true,
 					pin: header,

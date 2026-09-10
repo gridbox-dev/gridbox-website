@@ -22,3 +22,8 @@ export interface BaseComponent {
  * Component function or rendered node to display inside some components.
  */
 export type ComponentIcon = FC<{ className?: string }> | ReactNode;
+
+/**
+ * To specify the size of a component in pixels.
+ */
+export type PixelMeasurement = `${number}px`;

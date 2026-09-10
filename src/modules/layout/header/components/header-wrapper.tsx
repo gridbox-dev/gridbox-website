@@ -6,10 +6,11 @@
 
 import type { JSX } from 'react';
 import { Box, type BoxProps } from '@/components/base/box';
+import { HEADER_HEIGHT } from '@/config/constants/header-height';
 import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
-	base: 'relative z-9999 overflow-y-visible h-64 w-full',
+	base: 'relative z-9999 overflow-y-visible w-full',
 });
 
 /**
@@ -34,7 +35,13 @@ export const HeaderWrapper = (props: HeaderWrapperProps): JSX.Element => {
 	const { children, className, ...rest } = props;
 
 	return (
-		<Box {...(rest as BoxProps<'header'>)} as='header' data-header='wrapper' className={styles({ className })}>
+		<Box
+			{...(rest as BoxProps<'header'>)}
+			as='header'
+			data-header='wrapper'
+			style={{ height: HEADER_HEIGHT }}
+			className={styles({ className })}
+		>
 			{children}
 		</Box>
 	);
