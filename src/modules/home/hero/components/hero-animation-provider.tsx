@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { type JSX, type PropsWithChildren, useRef } from 'react';
 import { Box } from '@/components/base/box';
+import { useBreakpoint } from '@/hooks/use-breakpoint';
 
 /**
  * Client-side animation provider coordinating entry sequences and ScrollTrigger pinning effects.
@@ -20,6 +21,7 @@ import { Box } from '@/components/base/box';
  */
 export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => {
 	const { children } = props;
+	const { breakpoint } = useBreakpoint();
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(
@@ -36,7 +38,7 @@ export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => 
 				ease: 'power2.out',
 				scrollTrigger: {
 					trigger: containerRef.current,
-					start: 'top top',
+					start: 'top 64px',
 					end: 'center top',
 					scrub: true,
 					pin: header,
@@ -44,7 +46,7 @@ export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => 
 				},
 			});
 		},
-		{ scope: containerRef },
+		{ scope: containerRef, dependencies: [breakpoint] },
 	);
 
 	return (
