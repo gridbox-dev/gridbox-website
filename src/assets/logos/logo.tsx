@@ -9,7 +9,7 @@ import type { HTMLAttributes, JSX } from 'react';
 export const Logo = (props: HTMLAttributes<HTMLOrSVGElement>): JSX.Element => {
 	return (
 		<svg {...props} data-icon xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 111 24'>
-			<title>Gridbox Development Logo</title>
+			<title>Gridbox Development SpA</title>
 
 			<path
 				fill='currentColor'
