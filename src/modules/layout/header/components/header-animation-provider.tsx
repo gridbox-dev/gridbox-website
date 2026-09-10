@@ -7,6 +7,7 @@
 'use client';
 
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { type JSX, type PropsWithChildren, useRef } from 'react';
 import { Box } from '@/components/base/box';
@@ -26,8 +27,12 @@ export const HeaderAnimationProvider = (props: PropsWithChildren): JSX.Element =
 
 	useGSAP(
 		() => {
-			if (!isHydrated || device !== 'desktop') return;
 			const header = '[data-animate="header"]';
+
+			if (!isHydrated || device !== 'desktop') {
+				gsap.set(header, { clearProps: 'all' });
+				return;
+			}
 
 			ScrollTrigger.create({
 				trigger: containerRef.current,
@@ -36,9 +41,10 @@ export const HeaderAnimationProvider = (props: PropsWithChildren): JSX.Element =
 				end: 'bottom bottom',
 				pin: header,
 				pinSpacing: false,
+				invalidateOnRefresh: true,
 			});
 		},
-		{ scope: containerRef, dependencies: [device, isHydrated] },
+		{ scope: containerRef },
 	);
 
 	return (
