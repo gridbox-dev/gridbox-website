@@ -14,7 +14,7 @@ import type { Breakpoint } from '@/types/layout';
 
 const styles = tv({
 	slots: {
-		base: 'fixed left-1/2 -translate-x-1/2 z-10000 h-svh w-full max-w-container pointer-events-none select-none',
+		base: 'fixed inset-x-0 mx-auto z-10000 h-svh w-full max-w-container pointer-events-none select-none',
 		inner: 'relative flex justify-between shrink-0 size-full',
 		margin: 'h-full w-16 shrink-0 bg-utility-red-600/20 tablet:w-32',
 		grid: 'flex justify-between gap-16 size-full tablet:gap-24',
