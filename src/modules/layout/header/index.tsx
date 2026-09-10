@@ -6,6 +6,7 @@
 
 import type { JSX } from 'react';
 import type { BaseComponent } from '@/types/components';
+import { HeaderAnimationProvider } from './components/header-animation-provider';
 import { HeaderContainer } from './components/header-container';
 import { HeaderWrapper } from './components/header-wrapper';
 
@@ -15,8 +16,10 @@ export const Header = (props: HeaderProps): JSX.Element => {
 	const { dark } = props;
 
 	return (
-		<HeaderWrapper id='root-header' dark={dark}>
-			<HeaderContainer>Root header navigation</HeaderContainer>
-		</HeaderWrapper>
+		<HeaderAnimationProvider>
+			<HeaderWrapper id='root-header' dark={dark} data-animate='header'>
+				<HeaderContainer>Root header navigation</HeaderContainer>
+			</HeaderWrapper>
+		</HeaderAnimationProvider>
 	);
 };
