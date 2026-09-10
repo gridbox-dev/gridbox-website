@@ -6,6 +6,7 @@
 
 import type { JSX } from 'react';
 import type { BaseComponent } from '@/types/components';
+import { HeaderContainer } from './components/header-container';
 import { HeaderWrapper } from './components/header-wrapper';
 
 export interface HeaderProps extends BaseComponent {}
@@ -15,7 +16,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 
 	return (
 		<HeaderWrapper id='root-header' dark={dark}>
-			Root header navigation
+			<HeaderContainer>Root header navigation</HeaderContainer>
 		</HeaderWrapper>
 	);
 };
