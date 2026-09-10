@@ -10,6 +10,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { type JSX, type PropsWithChildren, useRef } from 'react';
 import { Box } from '@/components/base/box';
+import { useBreakpoint } from '@/hooks/use-breakpoint';
 
 /**
  * Animation and pinning provider component for the site's sticky header.
@@ -20,10 +21,12 @@ import { Box } from '@/components/base/box';
  */
 export const HeaderAnimationProvider = (props: PropsWithChildren): JSX.Element => {
 	const { children } = props;
+	const { device, isHydrated } = useBreakpoint();
 	const containerRef = useRef<HTMLDivElement>(null);
 
 	useGSAP(
 		() => {
+			if (!isHydrated || device !== 'desktop') return;
 			const header = '[data-animate="header"]';
 
 			ScrollTrigger.create({
@@ -35,7 +38,7 @@ export const HeaderAnimationProvider = (props: PropsWithChildren): JSX.Element =
 				pinSpacing: false,
 			});
 		},
-		{ scope: containerRef },
+		{ scope: containerRef, dependencies: [device, isHydrated] },
 	);
 
 	return (

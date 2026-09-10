@@ -22,6 +22,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 			<HeaderWrapper id='root-header' dark={dark} data-animate='header'>
 				<HeaderContainer>
 					<HeaderNavigation>Root header navigation</HeaderNavigation>
+
 					<HeaderActions>
 						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
 						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
