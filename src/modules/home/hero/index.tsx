@@ -23,10 +23,10 @@ import { HeroWrapper } from './components/hero-wrapper';
  * Extends base component interfaces with localized content attributes.
  */
 export interface HomeHeroProps extends BaseComponent {
-	     /**
-		 * Localized dictionary content for the landing hero section.
-		 */
-		content: InferDictionary<'home'>['hero'];
+	/**
+	 * Localized dictionary content for the landing hero section.
+	 */
+	content: InferDictionary<'home'>['hero'];
 }
 
 /**
