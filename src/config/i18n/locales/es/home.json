@@ -49,5 +49,35 @@
 				}
 			}
 		}
+	},
+	"clients": {
+		"title": "Clientes que confían en nuestros servicios de outsourcing tecnológico, desarrollo de productos digitales y consultoría estratégica de software avanzado.",
+		"description": "Listado de empresas, organizaciones y partners corporativos que han colaborado con Gridbox Development SpA:",
+		"logos": [
+			{
+				"key": "upalermo",
+				"label": "Universidad de Palermo - Educación universitaria"
+			},
+			{
+				"key": "fematco",
+				"label": "Fematco - Comercialización y distribución de materiales de construcción"
+			},
+			{
+				"key": "smartcoffee",
+				"label": "SmartCoffee - Industria y alimentos"
+			},
+			{
+				"key": "trio-consultores",
+				"label": "Trio Consultores - Servicios contables y financieros"
+			},
+			{
+				"key": "bema",
+				"label": "Bema - Arquitectura e inversión inmobiliaria"
+			},
+			{
+				"key": "reform",
+				"label": "Reform - Inversión inmobiliaria y house flipping"
+			}
+		]
 	}
 }
