@@ -10,9 +10,9 @@ import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
 	base: [
-		'relative overflow-hidden flex flex-col items-center gap-48 h-fit w-full pt-64',
+		'relative overflow-hidden flex flex-col items-center gap-48 h-fit w-full pt-48',
 		'bg-primary text-primary',
-		'tablet:gap-64 laptop:pt-96',
+		'tablet:gap-64 tablet:pt-64 laptop:pt-80',
 	].join(' '),
 });
 
