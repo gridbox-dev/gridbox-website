@@ -6,8 +6,8 @@
 
 import type { JSX } from 'react';
 import { Logo } from '@/assets/logos/logo';
+import { Link, type LinkProps } from '@/components/base/link';
 import { tv } from '@/config/ui/tw-variants';
-import { Link, type LinkProps } from '../base/link';
 
 const styles = tv({
 	base: 'h-24 text-utility-neutral-800 hover:text-utility-neutral-900 transition duration-100 ease-linear',
