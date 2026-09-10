@@ -43,7 +43,7 @@ const LanguageSwitcherContent = (props: LanguageSwitcherProps): JSX.Element => {
 			{...rest}
 			as='button'
 			size='sm'
-			variant='tertiary'
+			variant='ghost'
 			iconLeading={Translate}
 			onPress={handlePress}
 			className={className}
@@ -62,7 +62,7 @@ const LanguageSwitcherFallback = (props: LanguageSwitcherProps): JSX.Element => 
 			{...rest}
 			as='button'
 			size='sm'
-			variant='tertiary'
+			variant='ghost'
 			iconLeading={Translate}
 			className={['pointer-events-none', className].filter(Boolean).join(' ')}
 		/>
