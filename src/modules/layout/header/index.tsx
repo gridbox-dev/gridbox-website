@@ -6,8 +6,10 @@
 
 import type { JSX } from 'react';
 import type { BaseComponent } from '@/types/components';
+import { HeaderActions } from './components/header-actions';
 import { HeaderAnimationProvider } from './components/header-animation-provider';
 import { HeaderContainer } from './components/header-container';
+import { HeaderNavigation } from './components/header-navigation';
 import { HeaderWrapper } from './components/header-wrapper';
 
 export interface HeaderProps extends BaseComponent {}
@@ -18,7 +20,13 @@ export const Header = (props: HeaderProps): JSX.Element => {
 	return (
 		<HeaderAnimationProvider>
 			<HeaderWrapper id='root-header' dark={dark} data-animate='header'>
-				<HeaderContainer>Root header navigation</HeaderContainer>
+				<HeaderContainer>
+					<HeaderNavigation>Root header navigation</HeaderNavigation>
+					<HeaderActions>
+						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
+						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
+					</HeaderActions>
+				</HeaderContainer>
 			</HeaderWrapper>
 		</HeaderAnimationProvider>
 	);

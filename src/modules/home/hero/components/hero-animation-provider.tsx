@@ -36,8 +36,8 @@ export const HeroAnimationProvider = (props: PropsWithChildren): JSX.Element => 
 					y: 0,
 					filter: 'blur(0px)',
 					stagger: 0.06,
-					ease: 'power3.out',
-					duration: 0.6,
+					ease: 'power3.in',
+					duration: 0.4,
 					onComplete: () => {
 						gsap.set(fade, { clearProps: 'all' });
 					},

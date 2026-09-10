@@ -78,7 +78,7 @@ const CTA_HIERARCHY_MAP: Record<CTAHierarchy, CTAHierarchyConfig> = {
  * @returns The rendered call-to-action button-link node.
  */
 export const CTA = (props: CTAProps): JSX.Element => {
-	const { children, hierarchy, size, iconLeading, iconTrailing, ...rest } = props;
+	const { children, hierarchy, size, iconLeading, iconTrailing, className, ...rest } = props;
 	const config = CTA_HIERARCHY_MAP[hierarchy];
 
 	return (
@@ -90,6 +90,7 @@ export const CTA = (props: CTAProps): JSX.Element => {
 			variant={config.variant}
 			iconLeading={iconLeading}
 			iconTrailing={iconTrailing}
+			className={className}
 		>
 			<Link {...(rest as LinkProps<'a'>)} href={config.href}>
 				{children}
