@@ -8,6 +8,7 @@ import type { JSX } from 'react';
 import { Page } from '@/components/layout/page';
 import { Divider } from '@/components/ui/divider';
 import { getDictionary, type InferDictionary } from '@/config/i18n';
+import { HomeClients } from '@/modules/home/clients';
 import { HomeHero } from '@/modules/home/hero';
 import type { Language } from '@/types/i18n';
 
@@ -25,6 +26,8 @@ export default async function HomePage(props: PageProps<'/[lang]'>): Promise<JSX
 	return (
 		<Page id='home-page' background='primary'>
 			<HomeHero content={content.hero} />
+			<Divider color='tertiary' />
+			<HomeClients content={content.clients} />
 			<Divider color='tertiary' />
 			<section className='h-svh' id='contacto' />
 		</Page>

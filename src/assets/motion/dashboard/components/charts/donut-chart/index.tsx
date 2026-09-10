@@ -55,7 +55,7 @@ export interface DonutChartProps extends Omit<BoxProps<'div'>, 'as' | 'asChild'>
 const DonutChartBase = (props: DonutChartProps): JSX.Element => {
 	const { data = { initial: 48, final: 96 }, isFinalState = false, children, className, ...rest } = props;
 
-	const currentValue = isFinalState ? data.initial : data.final;
+	const currentValue = isFinalState ? data.final : data.initial;
 
 	const formattedChildren = Children.map(children, (child) => {
 		if (!isValidElement(child)) return child;

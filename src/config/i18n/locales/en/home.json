@@ -49,5 +49,35 @@
 				}
 			}
 		}
+	},
+	"clients": {
+		"title": "Clients who trust our tech outsourcing, digital product development, and advanced software strategic consulting services.",
+		"description": "List of companies, organizations, and corporate partners that have collaborated with Gridbox Development SpA:",
+		"logos": [
+			{
+				"key": "upalermo",
+				"label": "Universidad de Palermo - Higher education"
+			},
+			{
+				"key": "fematco",
+				"label": "Fematco - Building materials supply and distribution"
+			},
+			{
+				"key": "smartcoffee",
+				"label": "SmartCoffee - Food and beverage industry"
+			},
+			{
+				"key": "trio-consultores",
+				"label": "Trio Consultores - Accounting and financial services"
+			},
+			{
+				"key": "bema",
+				"label": "Bema - Architecture and real estate investment"
+			},
+			{
+				"key": "reform",
+				"label": "Reform - Real estate investment and house flipping"
+			}
+		]
 	}
 }
