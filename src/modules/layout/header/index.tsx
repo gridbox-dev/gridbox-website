@@ -8,6 +8,7 @@
 
 import type { JSX } from 'react';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
+import { MenuButton } from '@/components/ui/menu-button';
 import type { BaseComponent } from '@/types/components';
 import { HeaderActions } from './components/header-actions';
 import { HeaderAnimationProvider } from './components/header-animation-provider';
@@ -30,6 +31,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
 						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
 						<LanguageSwitcher />
+						<MenuButton />
 					</HeaderActions>
 				</HeaderContainer>
 			</HeaderWrapper>

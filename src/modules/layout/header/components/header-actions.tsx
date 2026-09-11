@@ -11,7 +11,7 @@ import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
 	slots: {
-		base: 'flex items-center justify-end gap-8 h-fit w-fit shrink-0',
+		base: 'flex items-center justify-end gap-6 h-fit w-fit shrink-0 tablet:gap-8',
 		cta: 'hidden',
 	},
 
