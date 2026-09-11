@@ -8,6 +8,7 @@ import type { JSX } from 'react';
 import { Box, type BoxProps } from '@/components/base/box';
 import { LogoLink } from '@/components/ui/logo-link';
 import { tv } from '@/config/ui/tw-variants';
+import { HeaderNavItem } from './header-nav-item';
 
 const styles = tv({
 	slots: {
@@ -17,20 +18,20 @@ const styles = tv({
 });
 
 /**
- * Properties for the {@link HeaderNavigation} layout component.
+ * Properties for the {@link HeaderNav} layout component.
  * Extends primitive `div` element props while omitting polymorph controls.
  */
-export type HeaderNavigationProps = Omit<BoxProps<'div'>, 'as' | 'asChild'>;
+export type HeaderNavProps = Omit<BoxProps<'div'>, 'as' | 'asChild'>;
 
 /**
  * Main site header navigation container component.
  * Embeds the primary {@link LogoLink} branding component alongside a responsive `nav` element
  * that encapsulates desktop navigation links.
  *
- * @param props - Component options conforming to {@link HeaderNavigationProps}.
+ * @param props - Component options conforming to {@link HeaderNavProps}.
  * @returns The rendered header navigation container node.
  */
-export const HeaderNavigation = (props: HeaderNavigationProps): JSX.Element => {
+const HeaderNavBase = (props: HeaderNavProps): JSX.Element => {
 	const { children, className, ...rest } = props;
 	const { base, inner } = styles();
 
@@ -44,3 +45,7 @@ export const HeaderNavigation = (props: HeaderNavigationProps): JSX.Element => {
 		</Box>
 	);
 };
+
+export const HeaderNav = Object.assign(HeaderNavBase, {
+	Item: HeaderNavItem,
+});

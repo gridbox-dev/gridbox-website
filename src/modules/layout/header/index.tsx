@@ -13,7 +13,7 @@ import type { BaseComponent } from '@/types/components';
 import { HeaderActions } from './components/header-actions';
 import { HeaderAnimationProvider } from './components/header-animation-provider';
 import { HeaderContainer } from './components/header-container';
-import { HeaderNavigation } from './components/header-navigation';
+import { HeaderNav } from './components/header-nav';
 import { HeaderWrapper } from './components/header-wrapper';
 
 export interface HeaderProps extends BaseComponent {}
@@ -25,7 +25,23 @@ export const Header = (props: HeaderProps): JSX.Element => {
 		<HeaderAnimationProvider>
 			<HeaderWrapper id='root-header' dark={dark} data-animate='header'>
 				<HeaderContainer>
-					<HeaderNavigation>Root header navigation</HeaderNavigation>
+					<HeaderNav>
+						<HeaderNav.Item as='button' id='services'>
+							Servicios
+						</HeaderNav.Item>
+
+						<HeaderNav.Item as='button' id='industries'>
+							Industrias
+						</HeaderNav.Item>
+
+						<HeaderNav.Item as='a' href='/casos-de-exito'>
+							Casos de éxito
+						</HeaderNav.Item>
+
+						<HeaderNav.Item as='button' id='company'>
+							Empresa
+						</HeaderNav.Item>
+					</HeaderNav>
 
 					<HeaderActions>
 						<LanguageSwitcher />
