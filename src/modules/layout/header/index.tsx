@@ -28,9 +28,9 @@ export const Header = (props: HeaderProps): JSX.Element => {
 					<HeaderNavigation>Root header navigation</HeaderNavigation>
 
 					<HeaderActions>
-						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
-						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
 						<LanguageSwitcher />
+						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
+						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
 						<MenuButton />
 					</HeaderActions>
 				</HeaderContainer>
