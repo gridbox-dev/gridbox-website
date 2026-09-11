@@ -50,7 +50,7 @@ export const ClientsMarqueeItem = (props: ClientsMarqueeItemProps): JSX.Element 
 
 	return (
 		<Box {...(rest as BoxProps<'div'>)} as='div' data-clients='marquee-item' className={base()}>
-			<VisuallyHidden as='p'>{label}</VisuallyHidden>
+			<VisuallyHidden as='h3'>{label}</VisuallyHidden>
 
 			{isValidElement(Logo) && Logo}
 			{isReactComponent(Logo) && <Logo data-icon aria-hidden='true' className={logo({ className })} />}
