@@ -6,11 +6,12 @@
 
 'use client';
 
-import type { JSX } from 'react';
+import { type JSX, useCallback } from 'react';
 import { Chevron } from '@/assets/icons/chevron';
 import { Link, type LinkProps } from '@/components/base/link';
 import { Button, type ButtonProps } from '@/components/ui/button';
 import { tv } from '@/config/ui/tw-variants';
+import { usePopupStore } from '@/stores/popup-store';
 import { useHeaderNavStore } from '../stores/header-nav-store';
 
 const styles = tv({
@@ -74,15 +75,31 @@ export type HeaderNavItemProps = HeaderNavItemButtonProps | HeaderNavItemLinkPro
 /**
  * Individual header navigation item component.
  * Polymorphically renders either an accessible ghost action button with a dropdown indicator
- * or a direct client-side routing link.
+ * or a direct client-side routing link. Controls both item selection and dropdown popup overlay states.
  *
  * @param props - Component options conforming to {@link HeaderNavItemProps}.
  * @returns The rendered navigation item node.
  */
 export const HeaderNavItem = (props: HeaderNavItemProps): JSX.Element => {
 	const { base } = styles();
+
 	const openedItem = useHeaderNavStore((s) => s.openedItem);
-	const toggle = useHeaderNavStore((s) => s.toggle);
+	const toggleItem = useHeaderNavStore((s) => s.toggle);
+
+	const openedPopup = usePopupStore((s) => s.openedPopup);
+	const togglePopup = usePopupStore((s) => s.toggle);
+
+	const targetId = props.id;
+
+	const toggleOpening = useCallback(() => {
+		if (!targetId) return;
+
+		toggleItem(targetId);
+
+		if (openedPopup !== 'header-nav-dropdown' || openedItem === targetId) {
+			togglePopup('header-nav-dropdown');
+		}
+	}, [targetId, openedItem, openedPopup, toggleItem, togglePopup]);
 
 	if (props.as === 'a') {
 		const { as, children, className, ...linkProps } = props;
@@ -94,8 +111,9 @@ export const HeaderNavItem = (props: HeaderNavItemProps): JSX.Element => {
 		);
 	}
 
-	const { as, children, id, className, ...buttonProps } = props;
-	const isOpen = Boolean(id && openedItem === id);
+	const { as, children, className, ...buttonProps } = props;
+
+	const isOpen = Boolean(targetId && openedItem === targetId && openedPopup === 'header-nav-dropdown');
 
 	return (
 		<Button
@@ -104,8 +122,10 @@ export const HeaderNavItem = (props: HeaderNavItemProps): JSX.Element => {
 			size='xs'
 			variant='ghost'
 			iconTrailing={Chevron}
+			aria-expanded={isOpen}
+			aria-haspopup='true'
 			data-opened={isOpen || undefined}
-			onPress={() => toggle(id)}
+			onPress={toggleOpening}
 			className={base({ isOpen, className })}
 		>
 			{children}
