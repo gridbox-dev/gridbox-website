@@ -4,7 +4,7 @@
  * Gridbox Development Official Website.
  *--------------------------------------------------------------------------------------------*/
 
-import type { JSX, PropsWithChildren } from 'react';
+import type { JSX } from 'react';
 import { Box } from '@/components/base/box';
 import { Scroller } from '@/components/layout/scroller';
 import { GridOverlay } from '@/components/tools/grid-overlay';
@@ -16,11 +16,12 @@ import { Header } from '@/modules/layout/header';
  * Serves as the primary structural wrapper responsible for encapsulating page content,
  * layout modules, and regional components inside the main document content tree.
  *
- * @param props - Component options conforming to {@link PropsWithChildren}.
+ * @param props - Component options conforming to {@link LayoutProps}.
  * @returns The rendered application shell container hierarchy.
  */
-export const Shell = (props: PropsWithChildren): JSX.Element => {
-	const { children } = props;
+export const Shell = async (props: LayoutProps<'/[lang]'>): Promise<JSX.Element> => {
+	const { children, params } = props;
+	const { lang: _lang } = await params;
 
 	return (
 		<Box as='div' data-layout='shell'>

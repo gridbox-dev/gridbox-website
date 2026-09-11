@@ -35,7 +35,7 @@ export default async function RootLayout(props: LayoutProps<'/[lang]'>): Promise
 	return (
 		<html lang={lang || DEFAULT_LOCALE} className={`${fontSans.variable} ${fontSerif.variable}`}>
 			<body>
-				<Shell>{children}</Shell>
+				<Shell params={params}>{children}</Shell>
 			</body>
 		</html>
 	);
