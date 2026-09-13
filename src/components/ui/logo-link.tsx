@@ -14,7 +14,14 @@ import { tv } from '@/config/ui/tw-variants';
 import { getLocalizedRoot } from '@/handlers/client/get-localized-route';
 
 const styles = tv({
-	base: 'h-24 text-utility-neutral-800 hover:text-utility-neutral-900 transition duration-100 ease-linear',
+	slots: {
+		base: [
+			'text-utility-neutral-800 transition duration-100 ease-linear',
+			'hover:text-utility-neutral-900',
+			'outline-brand focus-visible:rounded-6 focus-visible:outline-2 focus-visible:outline-offset-4',
+		].join(' '),
+		icon: 'h-24',
+	},
 });
 
 /**
@@ -32,13 +39,14 @@ export type LogoLinkProps = Omit<LinkProps, 'as' | 'asChild' | 'href' | 'childre
  */
 export const LogoLink = (props: LogoLinkProps): JSX.Element => {
 	const { className, ...rest } = props;
+	const { base, icon } = styles();
 
 	const pathname = usePathname();
 	const href = getLocalizedRoot(pathname || '/');
 
 	return (
-		<Link {...(rest as LinkProps)} href={href}>
-			<Logo className={styles({ className })} />
+		<Link {...(rest as LinkProps)} href={href} className={base({ className })}>
+			<Logo className={icon()} />
 		</Link>
 	);
 };
