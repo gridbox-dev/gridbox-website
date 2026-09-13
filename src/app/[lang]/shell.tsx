@@ -8,6 +8,7 @@ import type { JSX } from 'react';
 import { Box } from '@/components/base/box';
 import { Scroller } from '@/components/layout/scroller';
 import { GridOverlay } from '@/components/tools/grid-overlay';
+import { NavigationEvents } from '@/components/tools/navigation-events';
 import { env } from '@/config/env';
 import { Header } from '@/modules/layout/header';
 
@@ -24,16 +25,20 @@ export const Shell = async (props: LayoutProps<'/[lang]'>): Promise<JSX.Element>
 	const { lang: _lang } = await params;
 
 	return (
-		<Box as='div' data-layout='shell'>
-			{!env.IS_PRODUCTION && <GridOverlay />}
+		<>
+			<NavigationEvents />
 
-			<Scroller>
-				<Header />
+			<Box as='div' data-layout='shell'>
+				{!env.IS_PRODUCTION && <GridOverlay />}
 
-				<Box as='main' data-layout='main-content'>
-					{children}
-				</Box>
-			</Scroller>
-		</Box>
+				<Scroller>
+					<Header />
+
+					<Box as='main' data-layout='main-content'>
+						{children}
+					</Box>
+				</Scroller>
+			</Box>
+		</>
 	);
 };
