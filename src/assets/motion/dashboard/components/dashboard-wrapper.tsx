@@ -9,7 +9,7 @@ import { Box, type BoxProps } from '@/components/base/box';
 import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
-	base: 'relative flex size-full bg-primary',
+	base: 'relative flex size-full bg-primary pointer-events-none select-none',
 });
 
 /**

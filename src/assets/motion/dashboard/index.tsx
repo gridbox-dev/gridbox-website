@@ -173,9 +173,17 @@ export const MotionDashboard = (props: MotionDashboardProps): JSX.Element => {
 
 					<Card.ContentBlock withBorder>
 						<TableFiltersBar>
-							<Button variant='outline'>{widgets.clientsTable.actions.all}</Button>
-							<Button variant='ghost'>{widgets.clientsTable.actions.active}</Button>
-							<Button variant='ghost'>{widgets.clientsTable.actions.archive}</Button>
+							<Button variant='outline' excludeFromTabOrder>
+								{widgets.clientsTable.actions.all}
+							</Button>
+
+							<Button variant='ghost' excludeFromTabOrder>
+								{widgets.clientsTable.actions.active}
+							</Button>
+
+							<Button variant='ghost' excludeFromTabOrder>
+								{widgets.clientsTable.actions.archive}
+							</Button>
 						</TableFiltersBar>
 					</Card.ContentBlock>
 

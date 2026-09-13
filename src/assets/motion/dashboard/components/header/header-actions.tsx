@@ -42,13 +42,15 @@ export const HeaderActions = (props: HeaderActionsProps): JSX.Element => {
 
 		return cloneElement(child as ReactElement<ButtonProps>, {
 			...childProps,
+			'aria-hidden': 'true',
+			excludeFromTabOrder: true,
 			size: BUTTON_SIZE,
 		});
 	});
 
 	return (
 		<Box {...(rest as BoxProps<'div'>)} as='div' data-dashboard='header-actions' className={styles({ className })}>
-			<Button size={BUTTON_SIZE} variant='outline' iconLeading={Search} />
+			<Button size={BUTTON_SIZE} variant='outline' iconLeading={Search} excludeFromTabOrder />
 			{formattedChildren}
 		</Box>
 	);
