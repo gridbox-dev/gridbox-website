@@ -6,10 +6,11 @@
 
 'use client';
 
-import type { JSX } from 'react';
+import { type JSX, useCallback } from 'react';
 import { Box } from '@/components/base/box';
 import { Button, type ButtonProps } from '@/components/ui/button';
 import { tv } from '@/config/ui/tw-variants';
+import { usePopupStore } from '@/stores/popup-store';
 
 const styles = tv({
 	slots: {
@@ -98,8 +99,14 @@ export const MenuButton = (props: MenuButtonProps): JSX.Element => {
 	const { className, ...rest } = props;
 	const { base } = styles();
 
-	// This is for testing purposes until we have the Zustand Store.
-	const isOpen = false;
+	const openedItem = usePopupStore((s) => s.openedPopup);
+	const togglePopup = usePopupStore((s) => s.toggle);
+
+	const isOpen = openedItem === 'mobile-menu';
+
+	const toggleOpening = useCallback(() => {
+		togglePopup(isOpen ? undefined : 'mobile-menu');
+	}, [isOpen, togglePopup]);
 
 	return (
 		<Button
@@ -110,8 +117,9 @@ export const MenuButton = (props: MenuButtonProps): JSX.Element => {
 			aria-expanded={isOpen || undefined}
 			size='sm'
 			variant='ghost'
-			className={base({ className })}
+			onPress={toggleOpening}
 			iconLeading={<MenuButtonIcon isOpen={isOpen} />}
+			className={base({ className })}
 		/>
 	);
 };
