@@ -18,9 +18,20 @@ const styles = tv({
 	},
 });
 
+/**
+ * Properties for the {@link NavMenuWrapper} structural layout component.
+ * Extends base primitive `div` element props while omitting polymorph controls and identifier attributes.
+ */
 export interface NavMenuWrapperProps extends Omit<BoxProps<'div'>, 'as' | 'asChild' | 'id'> {}
 
-const NavMenuWrapperBase = (props: NavMenuWrapperProps): JSX.Element => {
+/**
+ * Full-screen backdrop and container wrapper for desktop navigation dropdown menus.
+ * Renders an absolute overlay positioned below the header boundary with structured content containers.
+ *
+ * @param props - Component configuration options defined by {@link NavMenuWrapperProps}.
+ * @returns The rendered navigation menu wrapper node structure.
+ */
+export const NavMenuWrapper = (props: NavMenuWrapperProps): JSX.Element => {
 	const { children, className, ...rest } = props;
 	const { base, container, inner, content } = styles();
 
@@ -36,5 +47,3 @@ const NavMenuWrapperBase = (props: NavMenuWrapperProps): JSX.Element => {
 		</Box>
 	);
 };
-
-export const NavMenuWrapper = Object.assign(NavMenuWrapperBase, {});
