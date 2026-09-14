@@ -9,6 +9,7 @@
 import type { JSX } from 'react';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { MenuButton } from '@/components/ui/menu-button';
+import type { InferDictionary } from '@/config/i18n';
 import { NavMenu } from '@/modules/layout/nav-menu';
 import type { BaseComponent } from '@/types/components';
 import { HeaderActions } from './components/header-actions';
@@ -16,39 +17,46 @@ import { HeaderAnimationProvider } from './components/header-animation-provider'
 import { HeaderContainer } from './components/header-container';
 import { HeaderNav } from './components/header-nav';
 import { HeaderWrapper } from './components/header-wrapper';
+import type { OpenedItem } from './stores/header-nav-store';
 
-export interface HeaderProps extends BaseComponent {}
+export interface HeaderProps extends BaseComponent {
+	content: InferDictionary<'header'>;
+}
 
 export const Header = (props: HeaderProps): JSX.Element => {
-	const { dark } = props;
+	const { content, dark } = props;
+	const { actions, links } = content;
 
 	return (
 		<HeaderAnimationProvider>
 			<HeaderWrapper id='root-header' dark={dark} data-animate='header'>
 				<HeaderContainer>
 					<HeaderNav>
-						<HeaderNav.Item as='button' id='services'>
-							Servicios
-						</HeaderNav.Item>
+						{Object.entries(links).map(([key, item]) => {
+							const itemKey = key as OpenedItem;
+							const href = 'href' in item ? item.href : undefined;
+							const type = href ? 'a' : 'button';
 
-						<HeaderNav.Item as='button' id='industries'>
-							Industrias
-						</HeaderNav.Item>
-
-						<HeaderNav.Item as='a' href='/casos-de-exito'>
-							Casos de éxito
-						</HeaderNav.Item>
-
-						<HeaderNav.Item as='button' id='company'>
-							Empresa
-						</HeaderNav.Item>
+							return (
+								<HeaderNav.Item key={itemKey} as={type} id={itemKey} href={href}>
+									{item.label}
+								</HeaderNav.Item>
+							);
+						})}
 					</HeaderNav>
 
 					<HeaderActions>
-						<LanguageSwitcher />
-						<HeaderActions.CTA hierarchy='conversion'>Solicitar presupuesto</HeaderActions.CTA>
-						<HeaderActions.CTA hierarchy='scheduling'>Agendar reunión</HeaderActions.CTA>
-						<MenuButton />
+						<LanguageSwitcher aria-label={actions.language.ariaLabel} />
+
+						<HeaderActions.CTA hierarchy='conversion' aria-label={actions.conversion.ariaLabel}>
+							{actions.conversion.label}
+						</HeaderActions.CTA>
+
+						<HeaderActions.CTA hierarchy='scheduling' aria-label={actions.scheduling.ariaLabel}>
+							{actions.scheduling.label}
+						</HeaderActions.CTA>
+
+						<MenuButton aria-label={actions.mobileMenu.ariaLabel} />
 					</HeaderActions>
 				</HeaderContainer>
 

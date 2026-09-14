@@ -12,7 +12,7 @@ import { Link, type LinkProps } from '@/components/base/link';
 import { Button, type ButtonProps } from '@/components/ui/button';
 import { tv } from '@/config/ui/tw-variants';
 import { usePopupStore } from '@/stores/popup-store';
-import { useHeaderNavStore } from '../stores/header-nav-store';
+import { type OpenedItem, useHeaderNavStore } from '../stores/header-nav-store';
 
 const styles = tv({
 	slots: {
@@ -53,18 +53,23 @@ export type HeaderNavItemButtonProps = HeaderNavItemBaseProps & {
 	/**
 	 * Unique identifier required to manage the open/close state in the navigation store.
 	 */
-	id?: string;
+	id?: OpenedItem;
 };
 
 /**
  * Props for the navigation anchor variant of {@link HeaderNavItem}.
  */
 export type HeaderNavItemLinkProps = HeaderNavItemBaseProps &
-	Omit<LinkProps, keyof HeaderNavItemBaseProps | 'as'> & {
+	Omit<LinkProps, keyof HeaderNavItemBaseProps | 'as' | 'id'> & {
 		/**
 		 * Renders the item as a client-side navigation link component.
 		 */
 		as: 'a';
+
+		/**
+		 * Unique identifier required to manage the open/close state in the navigation store.
+		 */
+		id?: OpenedItem;
 	};
 
 /**

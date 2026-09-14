@@ -10,7 +10,9 @@ import { Scroller } from '@/components/layout/scroller';
 import { GridOverlay } from '@/components/tools/grid-overlay';
 import { NavigationEvents } from '@/components/tools/navigation-events';
 import { env } from '@/config/env';
+import { getDictionary, type InferDictionary } from '@/config/i18n';
 import { Header } from '@/modules/layout/header';
+import type { Language } from '@/types/i18n';
 
 /**
  * Fundamental layout composition and application shell container.
@@ -22,7 +24,9 @@ import { Header } from '@/modules/layout/header';
  */
 export const Shell = async (props: LayoutProps<'/[lang]'>): Promise<JSX.Element> => {
 	const { children, params } = props;
-	const { lang: _lang } = await params;
+	const { lang } = await params;
+
+	const header = (await getDictionary(lang as Language, 'header')) as InferDictionary<'header'>;
 
 	return (
 		<>
@@ -32,7 +36,7 @@ export const Shell = async (props: LayoutProps<'/[lang]'>): Promise<JSX.Element>
 				{!env.IS_PRODUCTION && <GridOverlay />}
 
 				<Scroller>
-					<Header />
+					<Header content={header} />
 
 					<Box as='main' data-layout='main-content'>
 						{children}
