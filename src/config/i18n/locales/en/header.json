@@ -7,36 +7,42 @@
 					"label": "Software Development",
 					"items": [
 						{
+							"key": "custom-software",
 							"href": "/servicios/desarrollo-software-a-medida",
 							"title": "Custom software development",
 							"description": "Platforms, systems, and applications.",
 							"ariaLabel": "View custom software development service: platforms, systems, and applications"
 						},
 						{
+							"key": "system-integration",
 							"href": "/servicios/integracion-sistemas",
 							"title": "Systems and API integration",
 							"description": "Cross-platform connection and automation.",
 							"ariaLabel": "View systems and API integration service: cross-platform connection and automation"
 						},
 						{
+							"key": "website",
 							"href": "/servicios/desarrollo-sitios-web",
 							"title": "Websites and landing pages",
 							"description": "Corporate pages and lead capture sites.",
 							"ariaLabel": "View web development and corporate landing pages service"
 						},
 						{
+							"key": "legacy-modernization",
 							"href": "/servicios/modernizacion-sistemas-legacy",
 							"title": "Legacy systems modernization",
 							"description": "Cloud migration and tech stack upgrades.",
 							"ariaLabel": "View legacy systems modernization service: cloud migration and tech stack upgrades"
 						},
 						{
+							"key": "infrastructure",
 							"href": "/servicios/infraestructura",
 							"title": "Infrastructure and servers",
 							"description": "Cloud architecture and high availability.",
 							"ariaLabel": "View infrastructure and servers service: cloud architecture and high availability"
 						},
 						{
+							"key": "ux-design",
 							"href": "/servicios/diseno-ux-ui",
 							"title": "UX/UI design",
 							"description": "User interfaces and design systems.",
@@ -45,21 +51,24 @@
 					]
 				},
 				"e-commerce": {
-					"label": "E-Commerce & Retail",
+					"label": "E-Commerce and Retail",
 					"items": [
 						{
+							"key": "ecommerce-b2b",
 							"href": "/servicios/ecommerce-b2b",
 							"title": "B2B E-Commerce development",
 							"description": "Transactional portals and wholesale sales.",
 							"ariaLabel": "View B2B e-commerce development service: transactional portals and wholesale sales"
 						},
 						{
+							"key": "ecommerce-b2c",
 							"href": "/servicios/ecommerce-b2c",
 							"title": "B2C & Retail E-Commerce development",
 							"description": "Online storefronts and payment gateways.",
 							"ariaLabel": "View B2C and retail e-commerce development service: online storefronts and payment gateways"
 						},
 						{
+							"key": "erp-integration",
 							"href": "/servicios/integracion-erp",
 							"title": "ERP and core systems integration",
 							"description": "Seamless synchronization with core platforms.",
@@ -68,39 +77,45 @@
 					]
 				},
 				"consulting": {
-					"label": "Consulting & Strategy",
+					"label": "Consulting and Strategy",
 					"items": [
 						{
+							"key": "software-architecture",
 							"href": "/servicios/arquitectura-software",
 							"title": "Software architecture",
 							"description": "Scalable and secure technical infrastructure.",
 							"ariaLabel": "View software architecture consulting service: scalable and secure technical infrastructure"
 						},
 						{
+							"key": "cto-as-service",
 							"href": "/servicios/cto-as-service",
 							"title": "CTO as a Service",
 							"description": "External technical leadership and direction.",
 							"ariaLabel": "View CTO as a Service: external technical leadership and direction"
 						},
 						{
+							"key": "project-management",
 							"href": "/servicios/gestion-proyectos",
 							"title": "Project management",
 							"description": "IT project delivery and control.",
 							"ariaLabel": "View project management service: IT project delivery and control"
 						},
 						{
+							"key": "it-consulting",
 							"href": "/servicios/consultoria-ti",
 							"title": "Strategic IT consulting",
 							"description": "Project assessment and planning.",
 							"ariaLabel": "View strategic IT consulting service: project assessment and planning"
 						},
 						{
+							"key": "discovery",
 							"href": "/servicios/discovery-requerimientos",
 							"title": "Discovery and requirements analysis",
 							"description": "Process mapping and technical validation.",
 							"ariaLabel": "View discovery and requirements analysis service: process mapping and technical validation"
 						},
 						{
+							"key": "talent-selection",
 							"href": "/servicios/seleccion-talento",
 							"title": "Technical recruitment",
 							"description": "Assessment and selection of engineering talent.",

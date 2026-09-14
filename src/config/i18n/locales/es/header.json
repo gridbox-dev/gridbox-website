@@ -7,36 +7,42 @@
 					"label": "Desarrollo de software",
 					"items": [
 						{
+							"key": "custom-software",
 							"href": "/servicios/desarrollo-software-a-medida",
 							"title": "Desarrollo de software a medida",
 							"description": "Plataformas, sistemas y aplicaciones.",
 							"ariaLabel": "Ver servicio de desarrollo de software a medida: plataformas, sistemas y aplicaciones"
 						},
 						{
+							"key": "system-integration",
 							"href": "/servicios/integracion-sistemas",
 							"title": "Integración de sistemas y APIs",
 							"description": "Conexión y automatización entre plataformas.",
 							"ariaLabel": "Ver servicio de integración de sistemas y APIs: conexión y automatización entre plataformas"
 						},
 						{
+							"key": "website",
 							"href": "/servicios/desarrollo-sitios-web",
 							"title": "Sitios web y landing pages",
 							"description": "Páginas institucionales y de captación",
 							"ariaLabel": "Ver servicio de desarrollo de sitios web y landing pages institucionales"
 						},
 						{
+							"key": "legacy-modernization",
 							"href": "/servicios/modernizacion-sistemas-legacy",
 							"title": "Modernización de sistemas legacy",
 							"description": "Migración y actualización tecnológica.",
 							"ariaLabel": "Ver servicio de modernización de sistemas legacy: migración y actualización tecnológica"
 						},
 						{
+							"key": "infrastructure",
 							"href": "/servicios/infraestructura",
 							"title": "Infraestructura y servidores",
 							"description": "Arquitectura Cloud y alta disponibilidad.",
 							"ariaLabel": "Ver servicio de infraestructura y servidores: arquitectura Cloud y alta disponibilidad"
 						},
 						{
+							"key": "ux-design",
 							"href": "/servicios/diseno-ux-ui",
 							"title": "Diseño UX/UI",
 							"description": "Interfaces de usuario y sistemas de diseño.",
@@ -48,18 +54,21 @@
 					"label": "E-commerce y Retail",
 					"items": [
 						{
+							"key": "ecommerce-b2b",
 							"href": "/servicios/ecommerce-b2b",
 							"title": "Desarrollo de E-commerce B2B",
 							"description": "Portales transaccionales y venta mayorista.",
 							"ariaLabel": "Ver servicio de desarrollo de e-commerce B2B: portales transaccionales y venta mayorista"
 						},
 						{
+							"key": "ecommerce-b2c",
 							"href": "/servicios/ecommerce-b2c",
 							"title": "Desarrollo de E-commerce B2C/Retail",
 							"description": "Tiendas en línea y pasarelas de pago.",
 							"ariaLabel": "Ver servicio de desarrollo de e-commerce B2C y retail: tiendas en línea y pasarelas de pago"
 						},
 						{
+							"key": "erp-integration",
 							"href": "/servicios/integracion-erp",
 							"title": "Integración de ERP y sistemas",
 							"description": "Sincronización con sistemas core.",
@@ -71,38 +80,44 @@
 					"label": "Consultoría y Estrategia",
 					"items": [
 						{
+							"key": "software-architecture",
 							"href": "/servicios/arquitectura-software",
 							"title": "Arquitectura de software",
 							"description": "Infraestructura técnica escalable y segura.",
 							"ariaLabel": "Ver servicio de consultoría en arquitectura de software: infraestructura técnica escalable y segura"
 						},
 						{
+							"key": "cto-as-service",
 							"href": "/servicios/cto-as-service",
 							"title": "CTO as a Service",
 							"description": "Liderazgo y dirección técnica externa.",
 							"ariaLabel": "Ver servicio de CTO as a Service: liderazgo y dirección técnica externa"
 						},
 						{
+							"key": "project-management",
 							"href": "/servicios/gestion-proyectos",
 							"title": "Gestión de proyectos",
 							"description": "Control y seguimiento de proyectos TI.",
 							"ariaLabel": "Ver servicio de gestión de proyectos: control y seguimiento de proyectos TI"
 						},
 						{
+							"key": "it-consulting",
 							"href": "/servicios/consultoria-ti",
 							"title": "Consultoría estratégica en TI",
 							"description": "Evaluación y planificación de proyectos.",
 							"ariaLabel": "Ver servicio de consultoría estratégica en TI: evaluación y planificación de proyectos"
 						},
 						{
+							"key": "discovery",
 							"href": "/servicios/discovery-requerimientos",
 							"title": "Discovery y análisis de requerimientos",
 							"description": "Levantamiento de procesos y validación previa.",
 							"ariaLabel": "Ver servicio de discovery y análisis de requerimientos: levantamiento de procesos y validación previa"
 						},
 						{
+							"key": "talent-selection",
 							"href": "/servicios/seleccion-talento",
-							"title": "Selección de personal",
+							"title": "Selección de talento",
 							"description": "Evaluación y selección de talento técnico.",
 							"ariaLabel": "Ver servicio de selección de personal: evaluación y selección de talento técnico"
 						}

@@ -60,7 +60,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 					</HeaderActions>
 				</HeaderContainer>
 
-				<NavMenu dark={dark} />
+				<NavMenu dark={dark} content={links} />
 			</HeaderWrapper>
 		</HeaderAnimationProvider>
 	);

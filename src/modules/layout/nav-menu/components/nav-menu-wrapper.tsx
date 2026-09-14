@@ -14,7 +14,7 @@ const styles = tv({
 		base: 'hidden absolute z-0 inset-0 h-svh w-full bg-overlay/30 backdrop-blur-sm laptop:block',
 		container: 'flex flex-col items-center h-fit w-full min-h-95 bg-primary shadow-3xl',
 		inner: 'flex flex-col h-fit w-full max-w-container px-32',
-		content: 'flex flex-col gap-20 h-fit w-full py-32',
+		content: 'flex flex-col gap-20 h-fit w-full pt-32 pb-40',
 	},
 });
 

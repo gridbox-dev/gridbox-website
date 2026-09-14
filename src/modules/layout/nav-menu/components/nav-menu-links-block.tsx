@@ -8,13 +8,14 @@ import { Children, type JSX } from 'react';
 import { Box, type BoxProps } from '@/components/base/box';
 import { Text } from '@/components/base/text';
 import { tv } from '@/config/ui/tw-variants';
+import { NavMenuLinkItem } from './nav-menu-link-item';
 
 const styles = tv({
 	slots: {
 		base: 'flex flex-col gap-12 h-fit w-full',
 		label: 'text-copy-14 font-medium text-quaternary',
-		list: 'grid grid-cols-3 gap-8 h-fit w-full',
-		item: 'block h-fit w-fit',
+		list: 'grid grid-cols-3 gap-x-24 gap-y-8 h-fit w-full',
+		item: 'block h-fit w-full',
 	},
 });
 
@@ -23,7 +24,7 @@ const styles = tv({
  * Extends base primitive `div` element props while omitting polymorph controls.
  */
 export interface NavMenuLinksBlockProps extends Omit<BoxProps<'div'>, 'as' | 'asChild'> {
-    /**
+	/**
 	 * Category or section label text displayed above the link list.
 	 */
 	label: string;
@@ -59,4 +60,6 @@ const NavMenuLinksBlockBase = (props: NavMenuLinksBlockProps): JSX.Element => {
 	);
 };
 
-export const NavMenuLinksBlock = Object.assign(NavMenuLinksBlockBase, {});
+export const NavMenuLinksBlock = Object.assign(NavMenuLinksBlockBase, {
+	Item: NavMenuLinkItem,
+});
