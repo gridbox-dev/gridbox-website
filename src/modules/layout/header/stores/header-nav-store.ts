@@ -10,7 +10,7 @@ import { devtools } from 'zustand/middleware';
 /**
  * Type representing the identifier of the currently expanded header navigation item.
  */
-type OpenedItem = string | undefined;
+type OpenedItem = 'services' | 'industries' | 'company' | undefined;
 
 /**
  * State properties interface for the header navigation Zustand store.
