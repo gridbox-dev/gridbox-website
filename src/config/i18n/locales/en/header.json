@@ -1,0 +1,267 @@
+{
+	"links": {
+		"services": {
+			"label": "Services",
+			"blocks": {
+				"custom-software": {
+					"label": "Software Development",
+					"items": [
+						{
+							"href": "/servicios/desarrollo-software-a-medida",
+							"title": "Custom software development",
+							"description": "Platforms, systems, and applications.",
+							"ariaLabel": "View custom software development service: platforms, systems, and applications"
+						},
+						{
+							"href": "/servicios/integracion-sistemas",
+							"title": "Systems and API integration",
+							"description": "Cross-platform connection and automation.",
+							"ariaLabel": "View systems and API integration service: cross-platform connection and automation"
+						},
+						{
+							"href": "/servicios/desarrollo-sitios-web",
+							"title": "Websites and landing pages",
+							"description": "Corporate pages and lead capture sites.",
+							"ariaLabel": "View web development and corporate landing pages service"
+						},
+						{
+							"href": "/servicios/modernizacion-sistemas-legacy",
+							"title": "Legacy systems modernization",
+							"description": "Cloud migration and tech stack upgrades.",
+							"ariaLabel": "View legacy systems modernization service: cloud migration and tech stack upgrades"
+						},
+						{
+							"href": "/servicios/infraestructura",
+							"title": "Infrastructure and servers",
+							"description": "Cloud architecture and high availability.",
+							"ariaLabel": "View infrastructure and servers service: cloud architecture and high availability"
+						},
+						{
+							"href": "/servicios/diseno-ux-ui",
+							"title": "UX/UI design",
+							"description": "User interfaces and design systems.",
+							"ariaLabel": "View UX/UI design service: user interfaces and design systems"
+						}
+					]
+				},
+				"e-commerce": {
+					"label": "E-Commerce & Retail",
+					"items": [
+						{
+							"href": "/servicios/ecommerce-b2b",
+							"title": "B2B E-Commerce development",
+							"description": "Transactional portals and wholesale sales.",
+							"ariaLabel": "View B2B e-commerce development service: transactional portals and wholesale sales"
+						},
+						{
+							"href": "/servicios/ecommerce-b2c",
+							"title": "B2C & Retail E-Commerce development",
+							"description": "Online storefronts and payment gateways.",
+							"ariaLabel": "View B2C and retail e-commerce development service: online storefronts and payment gateways"
+						},
+						{
+							"href": "/servicios/integracion-erp",
+							"title": "ERP and core systems integration",
+							"description": "Seamless synchronization with core platforms.",
+							"ariaLabel": "View ERP and core systems integration service"
+						}
+					]
+				},
+				"consulting": {
+					"label": "Consulting & Strategy",
+					"items": [
+						{
+							"href": "/servicios/arquitectura-software",
+							"title": "Software architecture",
+							"description": "Scalable and secure technical infrastructure.",
+							"ariaLabel": "View software architecture consulting service: scalable and secure technical infrastructure"
+						},
+						{
+							"href": "/servicios/cto-as-service",
+							"title": "CTO as a Service",
+							"description": "External technical leadership and direction.",
+							"ariaLabel": "View CTO as a Service: external technical leadership and direction"
+						},
+						{
+							"href": "/servicios/gestion-proyectos",
+							"title": "Project management",
+							"description": "IT project delivery and control.",
+							"ariaLabel": "View project management service: IT project delivery and control"
+						},
+						{
+							"href": "/servicios/consultoria-ti",
+							"title": "Strategic IT consulting",
+							"description": "Project assessment and planning.",
+							"ariaLabel": "View strategic IT consulting service: project assessment and planning"
+						},
+						{
+							"href": "/servicios/discovery-requerimientos",
+							"title": "Discovery and requirements analysis",
+							"description": "Process mapping and technical validation.",
+							"ariaLabel": "View discovery and requirements analysis service: process mapping and technical validation"
+						},
+						{
+							"href": "/servicios/seleccion-talento",
+							"title": "Technical recruitment",
+							"description": "Assessment and selection of engineering talent.",
+							"ariaLabel": "View technical recruitment service: assessment and selection of engineering talent"
+						}
+					]
+				}
+			}
+		},
+		"industries": {
+			"label": "Industries",
+			"subLabel": "Categories",
+			"blocks": {
+				"consumer-goods": {
+					"label": "Consumer",
+					"items": [
+						{
+							"href": "/industrias/aerolineas",
+							"title": "Airlines",
+							"description": "Enhancing passenger experience and operational efficiency in highly regulated environments.",
+							"ariaLabel": "View technology solutions for the airline industry"
+						},
+						{
+							"href": "/industrias/banca",
+							"title": "Banking and financial services",
+							"description": "Modernizing core banking systems to enable secure, agile, and scalable digital operations.",
+							"ariaLabel": "View technology solutions for the banking and financial services industry"
+						},
+						{
+							"href": "/industrias/automotriz",
+							"title": "Automotive",
+							"description": "Accelerating automotive business growth through integrated digital channels and connected fleets.",
+							"ariaLabel": "View technology solutions for the automotive industry"
+						},
+						{
+							"href": "/industrias/seguros",
+							"title": "Insurance",
+							"description": "Automating policy management, claims processing, and policyholder service.",
+							"ariaLabel": "View technology solutions for the insurance industry"
+						},
+						{
+							"href": "/industrias/bienes-consumo",
+							"title": "Consumer goods and Retail",
+							"description": "Transforming direct-to-consumer engagement to drive sales in omnichannel environments.",
+							"ariaLabel": "View technology solutions for consumer goods and retail"
+						},
+						{
+							"href": "/industrias/turismo-hospitalidad",
+							"title": "Travel and Hospitality",
+							"description": "Digitizing guest experiences by optimizing bookings, loyalty programs, and property operations.",
+							"ariaLabel": "View technology solutions for the travel and hospitality industry"
+						}
+					]
+				},
+				"industry": {
+					"label": "Industrial",
+					"items": [
+						{
+							"href": "/industrias/energia-mineria",
+							"title": "Energy and Mining",
+							"description": "Driving operational continuity and strategic decision-making through real-time data.",
+							"ariaLabel": "View technology solutions for the energy and mining industry"
+						},
+						{
+							"href": "/industrias/logistica-suministro",
+							"title": "Logistics and supply chain",
+							"description": "Optimizing end-to-end supply chain visibility to ensure fast and efficient deliveries.",
+							"ariaLabel": "View technology solutions for logistics and supply chain"
+						},
+						{
+							"href": "/industrias/manufactura-industria",
+							"title": "Manufacturing and Industrial",
+							"description": "Connecting shop floor processes with corporate strategy to maximize productivity.",
+							"ariaLabel": "View technology solutions for manufacturing and industrial sectors"
+						},
+						{
+							"href": "/industrias/agroindustria",
+							"title": "Agribusiness",
+							"description": "Enhancing field traceability and operational efficiency across production pipelines.",
+							"ariaLabel": "View technology solutions for agribusiness"
+						},
+						{
+							"href": "/industrias/inmobiliario-construccion",
+							"title": "Real Estate and Construction",
+							"description": "Digitizing the real estate value chain to optimize commercialization and asset management.",
+							"ariaLabel": "View technology solutions for real estate and construction"
+						},
+						{
+							"href": "/industrias/infraestructura-transporte",
+							"title": "Infrastructure and Transportation",
+							"description": "Modernizing urban asset management, transit networks, and fleet planning for peak efficiency.",
+							"ariaLabel": "View technology solutions for infrastructure and transportation"
+						}
+					]
+				},
+				"services": {
+					"label": "Services and Public Sector",
+					"items": [
+						{
+							"href": "/industrias/educacion",
+							"title": "Education",
+							"description": "Redesigning the academic experience to connect institutions with hyper-connected students.",
+							"ariaLabel": "View technology solutions for the education sector"
+						},
+						{
+							"href": "/industrias/tecnologia-telecomunicaciones",
+							"title": "Technology and Telecommunications",
+							"description": "Scaling digital products and platforms to meet growing market demands.",
+							"ariaLabel": "View solutions for technology and telecommunications companies"
+						},
+						{
+							"href": "/industrias/salud",
+							"title": "Healthcare and medical services",
+							"description": "Elevating care quality by integrating clinical management with the patient ecosystem.",
+							"ariaLabel": "View technology solutions for healthcare and medical services"
+						},
+						{
+							"href": "/industrias/medios-entretenimiento",
+							"title": "Media and Entertainment",
+							"description": "Building content platforms and monetization models for digital audiences.",
+							"ariaLabel": "View technology solutions for media and entertainment"
+						},
+						{
+							"href": "/industrias/sector-publico",
+							"title": "Public Sector and Government",
+							"description": "Accelerating government digitization to deliver agile, transparent, and accessible public services.",
+							"ariaLabel": "View technology solutions for the public sector and government"
+						},
+						{
+							"href": "/industrias/fondos-inversionistas",
+							"title": "Investment Funds and Private Equity",
+							"description": "Evaluating and accelerating tech value creation within investment portfolios.",
+							"ariaLabel": "View technology solutions for investment funds and investors"
+						}
+					]
+				}
+			}
+		},
+		"success-stories": {
+			"label": "Success Stories",
+			"href": "/casos-de-exito"
+		},
+		"company": {
+			"label": "Company",
+			"blocks": {}
+		}
+	},
+	"actions": {
+		"language": {
+			"ariaLabel": "Change website language"
+		},
+		"conversion": {
+			"label": "Request a quote",
+			"ariaLabel": "Request a price quote or proposal for a software project"
+		},
+		"scheduling": {
+			"label": "Schedule a meeting",
+			"ariaLabel": "Schedule a technical consultation meeting with the Gridbox team"
+		},
+		"mobileMenu": {
+			"ariaLabel": "Toggle mobile navigation menu"
+		}
+	}
+}
