@@ -61,6 +61,7 @@ export const Scroller = (props: ScrollerProps): JSX.Element => {
 					smooth: 0.8,
 					effects: true,
 					smoothTouch: false,
+					normalizeScroll: true,
 				});
 
 				smoother.paused(false);
