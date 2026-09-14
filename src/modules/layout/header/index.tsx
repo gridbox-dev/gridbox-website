@@ -9,6 +9,7 @@
 import type { JSX } from 'react';
 import { LanguageSwitcher } from '@/components/ui/language-switcher';
 import { MenuButton } from '@/components/ui/menu-button';
+import { NavMenu } from '@/modules/layout/nav-menu';
 import type { BaseComponent } from '@/types/components';
 import { HeaderActions } from './components/header-actions';
 import { HeaderAnimationProvider } from './components/header-animation-provider';
@@ -50,6 +51,8 @@ export const Header = (props: HeaderProps): JSX.Element => {
 						<MenuButton />
 					</HeaderActions>
 				</HeaderContainer>
+
+				<NavMenu dark={dark} />
 			</HeaderWrapper>
 		</HeaderAnimationProvider>
 	);
