@@ -7,7 +7,7 @@
 import type { JSX } from 'react';
 import type { InferDictionary } from '@/config/i18n';
 import { RootWrapper } from '@/modules/layout/dropdown-menu/components/root/root-wrapper';
-import { ServicesMenu } from '@/modules/layout/dropdown-menu/components/root/services-menu';
+import { ServicesMenu } from '@/modules/layout/dropdown-menu/components/services-menu/services-menu';
 import { AutoCloseProvider } from '@/modules/layout/dropdown-menu/providers/autoclose-provider';
 import { FocusProvider } from '@/modules/layout/dropdown-menu/providers/focus-provider';
 import { MotionProvider } from '@/modules/layout/dropdown-menu/providers/motion-provider';

@@ -11,6 +11,7 @@ import { Box, type BoxProps } from '@/components/base/box';
 import type { InferDictionary } from '@/config/i18n';
 import { tv } from '@/config/ui/tw-variants';
 import { useNavbarStore } from '@/stores/navbar-store';
+import { ServicesBlock } from './services-block';
 
 const styles = tv({
 	slots: {
@@ -32,7 +33,9 @@ export const ServicesMenu = (props: ServicesMenuProps): JSX.Element | null => {
 
 	return (
 		<Box {...(rest as BoxProps<'div'>)} as='div' data-menu='services-menu-container' className={base()}>
-			Services dropdown menu
+			{Object.entries(content).map(([key, value]) => (
+				<ServicesBlock key={key} label={value.label} links={value.links} />
+			))}
 		</Box>
 	);
 };
