@@ -12,6 +12,7 @@ import { RootHeader } from '@/modules/layout/header/components/root/root-header'
 import { RootWrapper } from '@/modules/layout/header/components/root/root-wrapper';
 import { MotionProvider } from '@/modules/layout/header/providers/motion-provider';
 import type { BaseComponent } from '@/types/components';
+import { DropdownMenu } from '../dropdown-menu';
 
 export interface HeaderProps extends BaseComponent {
 	content: InferDictionary<'header'>;
@@ -29,6 +30,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 				</RootHeader>
 
 				{/* The dropdown menus should go here */}
+				<DropdownMenu />
 			</RootWrapper>
 		</MotionProvider>
 	);
