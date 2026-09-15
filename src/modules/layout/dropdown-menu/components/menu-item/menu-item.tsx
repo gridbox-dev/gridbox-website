@@ -21,7 +21,7 @@ const styles = tv({
 			'focus-visible:outline-2 focus-visible:outline-offset-2',
 			'hover:bg-primary_hover',
 		].join(' '),
-		content: 'flex flex-col gap-2 h-fit w-full',
+		content: 'flex flex-col h-fit w-full',
 		text: 'w-full text-copy-14',
 	},
 
