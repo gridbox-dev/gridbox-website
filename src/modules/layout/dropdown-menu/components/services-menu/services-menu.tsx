@@ -10,13 +10,11 @@ import type { JSX } from 'react';
 import { Box, type BoxProps } from '@/components/base/box';
 import type { InferDictionary } from '@/config/i18n';
 import { tv } from '@/config/ui/tw-variants';
+import { ServicesBlock } from '@/modules/layout/dropdown-menu/components/services-menu/services-block';
 import { useNavbarStore } from '@/stores/navbar-store';
-import { ServicesBlock } from './services-block';
 
 const styles = tv({
-	slots: {
-		base: 'flex flex-col gap-24 h-fit w-full',
-	},
+	base: 'flex flex-col gap-24 h-fit w-full',
 });
 
 /**
@@ -24,8 +22,7 @@ const styles = tv({
  * Extends base primitive `div` props while omitting layout-breaking properties
  * in favor of a strictly-typed localized content dictionary.
  */
-export interface ServicesMenuProps
-	extends Omit<BoxProps<'div'>, 'as' | 'asChild' | 'className' | 'children' | 'content'> {
+export interface ServicesMenuProps extends Omit<BoxProps<'div'>, 'as' | 'asChild' | 'children' | 'content'> {
 	/**
 	 * Localized dictionary section containing all service categories and their associated links.
 	 */
@@ -41,14 +38,13 @@ export interface ServicesMenuProps
  * @returns The rendered services menu container node when active, or `null` if closed.
  */
 export const ServicesMenu = (props: ServicesMenuProps): JSX.Element | null => {
-	const { content, ...rest } = props;
-	const { base } = styles();
+	const { content, className, ...rest } = props;
 
 	const isServicesOpen = useNavbarStore((s) => s.openedItem === 'services');
 	if (!isServicesOpen) return null;
 
 	return (
-		<Box {...(rest as BoxProps<'div'>)} as='div' data-menu='services-menu-container' className={base()}>
+		<Box {...(rest as BoxProps<'div'>)} as='div' data-menu='services-menu-container' className={styles({ className })}>
 			{Object.entries(content).map(([key, value]) => (
 				<ServicesBlock key={key} label={value.label} links={value.links} />
 			))}

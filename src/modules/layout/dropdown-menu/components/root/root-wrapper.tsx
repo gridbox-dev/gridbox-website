@@ -11,7 +11,7 @@ import { tv } from '@/config/ui/tw-variants';
 
 const styles = tv({
 	slots: {
-		base: 'absolute inset-0 z-0 flex flex-col items-center h-fit w-full min-h-95 bg-primary shadow-lg',
+		base: 'absolute inset-0 z-0 flex flex-col items-center h-fit w-full bg-primary shadow-lg',
 		inner: 'flex flex-col h-fit w-full max-w-container p-32',
 	},
 });
