@@ -14,7 +14,7 @@ import { ServicesBlock } from '@/modules/layout/dropdown-menu/components/service
 import { useNavbarStore } from '@/stores/navbar-store';
 
 const styles = tv({
-	base: 'flex flex-col gap-24 h-fit w-full',
+	base: 'flex flex-col gap-24 h-max w-full',
 });
 
 /**
@@ -40,8 +40,11 @@ export interface ServicesMenuProps extends Omit<BoxProps<'div'>, 'as' | 'asChild
 export const ServicesMenu = (props: ServicesMenuProps): JSX.Element | null => {
 	const { content, className, ...rest } = props;
 
-	const isServicesOpen = useNavbarStore((s) => s.openedItem === 'services');
-	if (!isServicesOpen) return null;
+	const openedItem = useNavbarStore((s) => s.openedItem);
+
+	if (openedItem !== undefined && openedItem !== 'services') {
+		return null;
+	}
 
 	return (
 		<Box {...(rest as BoxProps<'div'>)} as='div' data-menu='services-menu-container' className={styles({ className })}>

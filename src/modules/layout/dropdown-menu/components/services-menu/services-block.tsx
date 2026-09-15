@@ -16,7 +16,7 @@ const styles = tv({
 	slots: {
 		base: 'flex flex-col gap-8 h-fit w-full',
 		text: 'text-copy-14 font-medium text-quaternary',
-		list: 'grid grid-cols-3 gap-y-8 gap-x-24 h-fit w-full',
+		list: 'grid grid-cols-3 gap-y-2 gap-x-24 h-fit w-full',
 	},
 });
 

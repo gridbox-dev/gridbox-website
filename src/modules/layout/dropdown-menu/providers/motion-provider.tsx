@@ -15,8 +15,7 @@ import { usePopupStore } from '@/stores/popup-store';
 
 /**
  * Headless motion provider for the header dropdown menu element.
- * Manages dual-directional GSAP entrance (fade-in & slide-down) and exit (fade-out & slide-up) animations
- * synchronized with active megamenu and popup states without adding extra wrapper nodes.
+ * Manages dual-directional GSAP entrance (fade-in & slide-down) and exit (fade-out & slide-up) animations.
  *
  * @param props - Children nodes to apply entry and exit animations to defined by {@link PropsWithChildren}.
  * @returns The slot-composed child element attached to the GSAP animation reference.
@@ -48,9 +47,6 @@ export const MotionProvider = (props: PropsWithChildren): JSX.Element => {
 						duration: 0.28,
 						ease: 'power3.out',
 						force3D: true,
-						onComplete: () => {
-							gsap.set(menu, { clearProps: 'transform,opacity' });
-						},
 					},
 				);
 			} else {
@@ -63,7 +59,7 @@ export const MotionProvider = (props: PropsWithChildren): JSX.Element => {
 				});
 			}
 		},
-		{ scope: containerRef, dependencies: [isDropdownOpen], revertOnUpdate: true },
+		{ scope: containerRef, dependencies: [isDropdownOpen] },
 	);
 
 	return <Slot ref={containerRef}>{children}</Slot>;
