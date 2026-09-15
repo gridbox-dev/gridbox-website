@@ -5,13 +5,23 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX } from 'react';
+import { FocusProvider } from '@/modules/layout/dropdown-menu/providers/focus-provider';
+import { MotionProvider } from '@/modules/layout/dropdown-menu/providers/motion-provider';
+import { VisibilityProvider } from '@/modules/layout/dropdown-menu/providers/visibility-provider';
 import type { BaseComponent } from '@/types/components';
-import { VisibilityProvider } from './providers/visibility-provider';
 
 export interface DropdownMenuProps extends BaseComponent {}
 
 export const DropdownMenu = (props: DropdownMenuProps): JSX.Element => {
 	const { dark: _dark } = props;
 
-	return <VisibilityProvider>Dropdown menu</VisibilityProvider>;
+	return (
+		<VisibilityProvider>
+			<FocusProvider>
+				<MotionProvider>
+					<div>Full-width dropdown menu</div>
+				</MotionProvider>
+			</FocusProvider>
+		</VisibilityProvider>
+	);
 };
