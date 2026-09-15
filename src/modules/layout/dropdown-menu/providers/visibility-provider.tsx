@@ -6,9 +6,15 @@
 
 'use client';
 
-import type { JSX, PropsWithChildren } from 'react';
+import { type JSX, type PropsWithChildren, useEffect, useState } from 'react';
 import { useNavbarStore } from '@/stores/navbar-store';
 import { usePopupStore } from '@/stores/popup-store';
+
+/**
+ * Delay in milliseconds before unmounting children to allow exit animations to complete.
+ * Matches the exit animation duration defined in GSAP.
+ */
+const UNMOUNT_DELAY_MS: number = 280;
 
 /**
  * Conditional mounting boundary component that evaluates active megamenu and global popup state.
@@ -23,9 +29,23 @@ export const VisibilityProvider = (props: PropsWithChildren): JSX.Element | null
 	const openedItem = useNavbarStore((s) => s.openedItem);
 	const openedPopup = usePopupStore((s) => s.openedPopup);
 
-	const isDropdownOpen = openedPopup === 'header-nav-dropdown' && openedItem;
+	const isDropdownOpen = Boolean(openedPopup === 'header-nav-dropdown' && openedItem);
+	const [isVisible, setIsVisible] = useState<boolean>(isDropdownOpen);
 
-	if (!isDropdownOpen) return null;
+	useEffect(() => {
+		if (isDropdownOpen) {
+			setIsVisible(true);
+			return;
+		}
+
+		const timer = setTimeout(() => {
+			setIsVisible(false);
+		}, UNMOUNT_DELAY_MS);
+
+		return () => clearTimeout(timer);
+	}, [isDropdownOpen]);
+
+	if (!isVisible) return null;
 
 	return <>{children}</>;
 };

@@ -29,7 +29,6 @@ export const Header = (props: HeaderProps): JSX.Element => {
 					<Actions content={content.actions} />
 				</RootHeader>
 
-				{/* The dropdown menus should go here */}
 				<DropdownMenu />
 			</RootWrapper>
 		</MotionProvider>
