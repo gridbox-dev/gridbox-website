@@ -42,5 +42,99 @@
 		"mobileMenu": {
 			"ariaLabel": "Abrir o cerrar el menú de navegación móvil"
 		}
+	},
+	"menu": {
+		"services": {
+			"software": {
+				"label": "Desarrollo de software",
+				"links": {
+					"customSoftware": {
+						"title": "Desarrollo de software a medida",
+						"description": "Plataformas, sistemas y aplicaciones.",
+						"ariaLabel": "Ver servicio de desarrollo de software empresarial a medida"
+					},
+					"systemIntegration": {
+						"title": "Integración de sistemas y APIs",
+						"description": "Conexión y automatización entre plataformas.",
+						"ariaLabel": "Ver servicio de integración de sistemas y APIs para tu empresa"
+					},
+					"websites": {
+						"title": "Sitios web y landing pages",
+						"description": "Páginas web institucionales y de captación.",
+						"ariaLabel": "Ver servicio de desarrollo de sitios web institucionales y landing pages para campañas"
+					},
+					"legacyModernization": {
+						"title": "Modernización de sistemas legacy",
+						"description": "Migración y actualización tecnológica.",
+						"ariaLabel": "Ver servicio de modernización de sistemas legacy y actualización tecnológica"
+					},
+					"infrastructure": {
+						"title": "Infraestructura y servidores",
+						"description": "Arquitectura Cloud y alta disponibilidad.",
+						"ariaLabel": "Ver servicio de infraestructura y servidores, arquitectura Cloud y alta disponibilidad"
+					},
+					"design": {
+						"title": "Diseño UX/UI",
+						"description": "Interfaces de usuario y sistemas de diseño.",
+						"ariaLabel": "Ver servicio de diseño UX/UI, interfaces de usuario y sistemas de diseño"
+					}
+				}
+			},
+			"eCommerce": {
+				"label": "E-commerce y Retail",
+				"links": {
+					"eCommerceB2B": {
+						"title": "Desarrollo de E-commerce B2B",
+						"description": "Portales transaccionales y venta mayorista.",
+						"ariaLabel": "Ver servicio de e-commerce B2B para portales transaccionales y venta mayorista"
+					},
+					"eCommerceB2C": {
+						"title": "Desarrollo de E-commerce B2C",
+						"description": "Tiendas en línea y pasarelas de pago.",
+						"ariaLabel": "Ver servicio de e-commerce B2C para tiendas en línea e integración con pasarelas de pago"
+					},
+					"erpIntegration": {
+						"title": "Integración de ERP y sistemas",
+						"description": "Sincronización con sistemas core.",
+						"ariaLabel": "Ver servicio de integración de ERP y sistemas core"
+					}
+				}
+			},
+			"consulting": {
+				"label": "Consultoría y Estrategia",
+				"links": {
+					"architecture": {
+						"title": "Arquitectura de software",
+						"description": "Infraestructura técnica escalable y segura.",
+						"ariaLabel": "Ver servicio de consultoría en arquitectura de software para infraestructura técnica escalable y segura"
+					},
+					"cto": {
+						"title": "CTO as a Service",
+						"description": "Liderazgo y dirección técnica externa.",
+						"ariaLabel": "Ver servicio de CTO as a Service, liderazgo y dirección técnica externa"
+					},
+					"projectManagement": {
+						"title": "Gestión de proyectos",
+						"description": "Control y seguimiento de proyectos TI.",
+						"ariaLabel": "Ver servicio de gestión, control y seguimiento de proyectos TI"
+					},
+					"itConsulting": {
+						"title": "Consultoría estratégica en TI",
+						"description": "Evaluación y planificación de proyectos.",
+						"ariaLabel": "Ver servicio de consultoría estratégica en TI, evaluación y planificación de proyectos"
+					},
+					"discovery": {
+						"title": "Discovery y análisis de requerimientos",
+						"description": "Levantamiento de procesos y validación previa.",
+						"ariaLabel": "Ver servicio de discovery, análisis de requerimientos y levantamiento de procesos"
+					},
+					"talentSelection": {
+						"title": "Selección de equipos",
+						"description": "Evaluación y selección de talento técnico.",
+						"ariaLabel": "Ver servicio de selección de personal y evaluación de talento técnico"
+					}
+				}
+			}
+		}
 	}
 }

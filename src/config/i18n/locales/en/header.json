@@ -42,5 +42,99 @@
 		"mobileMenu": {
 			"ariaLabel": "Toggle mobile navigation menu"
 		}
+	},
+	"menu": {
+		"services": {
+			"software": {
+				"label": "Software Development",
+				"links": {
+					"customSoftware": {
+						"title": "Custom software development",
+						"description": "Platforms, systems, and applications.",
+						"ariaLabel": "View custom enterprise software development service"
+					},
+					"systemIntegration": {
+						"title": "Systems and API integration",
+						"description": "Connection and automation between platforms.",
+						"ariaLabel": "View systems and API integration service for your business"
+					},
+					"websites": {
+						"title": "Websites and landing pages",
+						"description": "Corporate websites and lead generation pages.",
+						"ariaLabel": "View corporate website and campaign landing page development service"
+					},
+					"legacyModernization": {
+						"title": "Legacy system modernization",
+						"description": "Migration and technology upgrades.",
+						"ariaLabel": "View legacy system modernization and technology upgrade service"
+					},
+					"infrastructure": {
+						"title": "Infrastructure and servers",
+						"description": "Cloud architecture and high availability.",
+						"ariaLabel": "View infrastructure and servers, Cloud architecture, and high availability service"
+					},
+					"design": {
+						"title": "UX/UI Design",
+						"description": "User interfaces and design systems.",
+						"ariaLabel": "View UX/UI design, user interfaces, and design systems service"
+					}
+				}
+			},
+			"eCommerce": {
+				"label": "E-commerce and Retail",
+				"links": {
+					"eCommerceB2B": {
+						"title": "B2B E-commerce development",
+						"description": "Transactional portals and wholesale sales.",
+						"ariaLabel": "View B2B e-commerce service for transactional portals and wholesale sales"
+					},
+					"eCommerceB2C": {
+						"title": "B2C E-commerce development",
+						"description": "Online stores and payment gateways.",
+						"ariaLabel": "View B2C e-commerce service for online stores and payment gateway integration"
+					},
+					"erpIntegration": {
+						"title": "ERP and systems integration",
+						"description": "Synchronization with core systems.",
+						"ariaLabel": "View ERP and core systems integration service"
+					}
+				}
+			},
+			"consulting": {
+				"label": "Consulting and Strategy",
+				"links": {
+					"architecture": {
+						"title": "Software architecture",
+						"description": "Scalable and secure technical infrastructure.",
+						"ariaLabel": "View software architecture consulting service for scalable and secure technical infrastructure"
+					},
+					"cto": {
+						"title": "CTO as a Service",
+						"description": "External technical direction and leadership.",
+						"ariaLabel": "View CTO as a Service, external technical direction and leadership"
+					},
+					"projectManagement": {
+						"title": "Project management",
+						"description": "IT project control and tracking.",
+						"ariaLabel": "View IT project management, control, and tracking service"
+					},
+					"itConsulting": {
+						"title": "Strategic IT consulting",
+						"description": "Project evaluation and planning.",
+						"ariaLabel": "View strategic IT consulting, project evaluation, and planning service"
+					},
+					"discovery": {
+						"title": "Discovery and requirements analysis",
+						"description": "Process mapping and prior validation.",
+						"ariaLabel": "View discovery, requirements analysis, and process mapping service"
+					},
+					"talentSelection": {
+						"title": "Team hiring and selection",
+						"description": "Technical talent assessment and selection.",
+						"ariaLabel": "View team selection and technical talent assessment service"
+					}
+				}
+			}
+		}
 	}
 }
