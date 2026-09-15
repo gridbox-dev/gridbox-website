@@ -5,6 +5,7 @@
  *--------------------------------------------------------------------------------------------*/
 
 import type { JSX } from 'react';
+import type { InferDictionary } from '@/config/i18n';
 import { RootWrapper } from '@/modules/layout/dropdown-menu/components/root/root-wrapper';
 import { ServicesMenu } from '@/modules/layout/dropdown-menu/components/root/services-menu';
 import { AutoCloseProvider } from '@/modules/layout/dropdown-menu/providers/autoclose-provider';
@@ -13,10 +14,12 @@ import { MotionProvider } from '@/modules/layout/dropdown-menu/providers/motion-
 import { VisibilityProvider } from '@/modules/layout/dropdown-menu/providers/visibility-provider';
 import type { BaseComponent } from '@/types/components';
 
-export interface DropdownMenuProps extends BaseComponent {}
+export interface DropdownMenuProps extends BaseComponent {
+	content: InferDictionary<'header'>['menu'];
+}
 
 export const DropdownMenu = (props: DropdownMenuProps): JSX.Element => {
-	const { dark } = props;
+	const { content, dark } = props;
 
 	return (
 		<VisibilityProvider>
@@ -24,7 +27,7 @@ export const DropdownMenu = (props: DropdownMenuProps): JSX.Element => {
 				<FocusProvider>
 					<MotionProvider>
 						<RootWrapper dark={dark} id='root-dropdown-menu'>
-							<ServicesMenu />
+							<ServicesMenu content={content.services} />
 						</RootWrapper>
 					</MotionProvider>
 				</FocusProvider>
