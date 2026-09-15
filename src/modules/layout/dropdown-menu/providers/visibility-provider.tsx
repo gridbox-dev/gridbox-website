@@ -7,6 +7,7 @@
 'use client';
 
 import { type JSX, type PropsWithChildren, useEffect, useState } from 'react';
+import { useBreakpoint } from '@/hooks/use-breakpoint';
 import { useNavbarStore } from '@/stores/navbar-store';
 import { usePopupStore } from '@/stores/popup-store';
 
@@ -26,10 +27,14 @@ const UNMOUNT_DELAY_MS: number = 280;
 export const VisibilityProvider = (props: PropsWithChildren): JSX.Element | null => {
 	const { children } = props;
 
+	const { device, isHydrated } = useBreakpoint();
+
 	const openedItem = useNavbarStore((s) => s.openedItem);
 	const openedPopup = usePopupStore((s) => s.openedPopup);
 
+	const isDesktop = isHydrated && device === 'desktop';
 	const isDropdownOpen = Boolean(openedPopup === 'header-nav-dropdown' && openedItem);
+
 	const [isVisible, setIsVisible] = useState<boolean>(isDropdownOpen);
 
 	useEffect(() => {
@@ -45,7 +50,7 @@ export const VisibilityProvider = (props: PropsWithChildren): JSX.Element | null
 		return () => clearTimeout(timer);
 	}, [isDropdownOpen]);
 
-	if (!isVisible) return null;
+	if (!(isDesktop && isVisible)) return null;
 
 	return <>{children}</>;
 };
