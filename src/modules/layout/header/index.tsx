@@ -6,6 +6,7 @@
 
 import type { JSX } from 'react';
 import type { InferDictionary } from '@/config/i18n';
+import { Actions } from '@/modules/layout/header/components/actions/actions';
 import { Navbar } from '@/modules/layout/header/components/navigation/navbar';
 import { RootHeader } from '@/modules/layout/header/components/root/root-header';
 import { RootWrapper } from '@/modules/layout/header/components/root/root-wrapper';
@@ -24,6 +25,7 @@ export const Header = (props: HeaderProps): JSX.Element => {
 			<RootWrapper>
 				<RootHeader dark={dark} id='root-header'>
 					<Navbar content={content.navbar} />
+					<Actions content={content.actions} />
 				</RootHeader>
 
 				{/* The dropdown menus should go here */}

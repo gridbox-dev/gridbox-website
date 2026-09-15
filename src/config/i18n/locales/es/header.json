@@ -26,5 +26,21 @@
 				"ariaLabel": "Desplegar menú sobre nuestra empresa, cultura y carreras"
 			}
 		]
+	},
+	"actions": {
+		"languageSwitcher": {
+			"ariaLabel": "Cambiar idioma del sitio"
+		},
+		"conversion": {
+			"label": "Solicitar presupuesto",
+			"ariaLabel": "Solicitar una cotización o presupuesto para un proyecto de software"
+		},
+		"scheduling": {
+			"label": "Agendar reunión",
+			"ariaLabel": "Agendar una reunión de asesoría técnica con el equipo de Gridbox"
+		},
+		"mobileMenu": {
+			"ariaLabel": "Abrir o cerrar el menú de navegación móvil"
+		}
 	}
 }

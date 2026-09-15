@@ -26,5 +26,21 @@
 				"ariaLabel": "Toggle company, culture, and careers menu"
 			}
 		]
+	},
+	"actions": {
+		"languageSwitcher": {
+			"ariaLabel": "Switch website language"
+		},
+		"conversion": {
+			"label": "Request a quote",
+			"ariaLabel": "Request a price quote or proposal for a software project"
+		},
+		"scheduling": {
+			"label": "Schedule a meeting",
+			"ariaLabel": "Schedule a technical consultation meeting with the Gridbox team"
+		},
+		"mobileMenu": {
+			"ariaLabel": "Toggle mobile navigation menu"
+		}
 	}
 }
