@@ -11,7 +11,7 @@ import { FocusScope } from 'react-aria';
 import type { InferDictionary } from '@/config/i18n';
 import { usePopupStore } from '@/stores/popup-store';
 import type { BaseComponent } from '@/types/components';
-import { useHeaderNavStore } from '../header/stores/header-nav-store';
+import { useHeaderNavStore } from '../_header/stores/header-nav-store';
 import { NavMenuAnimationProvider } from './components/nav-menu-animation-provider';
 import { NavMenuItemIcon } from './components/nav-menu-item-icon';
 import { NavMenuItemText } from './components/nav-menu-item-text';

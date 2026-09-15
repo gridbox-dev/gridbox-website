@@ -8,7 +8,6 @@ import type { JSX } from 'react';
 import { Box } from '@/components/base/box';
 import { Scroller } from '@/components/layout/scroller';
 import { GridOverlay } from '@/components/tools/grid-overlay';
-import { NavigationEvents } from '@/components/tools/navigation-events';
 import { env } from '@/config/env';
 import { getDictionary, type InferDictionary } from '@/config/i18n';
 import { Header } from '@/modules/layout/header';
@@ -26,23 +25,19 @@ export const Shell = async (props: LayoutProps<'/[lang]'>): Promise<JSX.Element>
 	const { children, params } = props;
 	const { lang } = await params;
 
-	const header = (await getDictionary(lang as Language, 'header')) as InferDictionary<'header'>;
+	const headerContent = (await getDictionary(lang as Language, 'header')) as InferDictionary<'header'>;
 
 	return (
-		<>
-			<NavigationEvents />
+		<Box as='div' data-layout='shell'>
+			{!env.IS_PRODUCTION && <GridOverlay />}
 
-			<Box as='div' data-layout='shell'>
-				{!env.IS_PRODUCTION && <GridOverlay />}
+			<Scroller>
+				<Header content={headerContent} />
 
-				<Scroller>
-					<Header content={header} />
-
-					<Box as='main' data-layout='main-content'>
-						{children}
-					</Box>
-				</Scroller>
-			</Box>
-		</>
+				<Box as='main' id='main-content' data-layout='main-content'>
+					{children}
+				</Box>
+			</Scroller>
+		</Box>
 	);
 };
