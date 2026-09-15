@@ -9,12 +9,14 @@ import { Box } from '@/components/base/box';
 import { Link, type LinkProps } from '@/components/base/link';
 import { Text } from '@/components/base/text';
 import { tv } from '@/config/ui/tw-variants';
+import { MenuItemIcon } from '@/modules/layout/dropdown-menu/components/menu-item/menu-item-icon';
+import type { ComponentIcon } from '@/types/components';
 
 const styles = tv({
 	slots: {
 		base: 'block h-fit w-full',
 		inner: [
-			'group overflow-hidden flex items-center gap-12 h-fit w-full p-12 rounded-10 bg-primary',
+			'group flex items-center gap-12 h-fit w-full p-12 rounded-10 bg-primary',
 			'whitespace-nowrap outline-brand transition duration-100 ease-linear select-none',
 			'focus-visible:outline-2 focus-visible:outline-offset-2',
 			'hover:bg-primary_hover',
@@ -50,6 +52,11 @@ export interface MenuItemProps extends Omit<LinkProps<'a'>, 'as' | 'asChild' | '
 	 * Optional secondary description text providing contextual details about the target page.
 	 */
 	description?: string;
+
+	/**
+	 * Icon component or React element to render within the decorated container.
+	 */
+	icon?: ComponentIcon;
 
 	/**
 	 * Custom class names for the list wrapper, link anchor, content box, title, and description slots.
@@ -91,13 +98,13 @@ export interface MenuItemProps extends Omit<LinkProps<'a'>, 'as' | 'asChild' | '
  * @returns The rendered megamenu navigation item element.
  */
 export const MenuItem = (props: MenuItemProps): JSX.Element => {
-	const { title, description, classNames, ...rest } = props;
+	const { title, description, icon, classNames, ...rest } = props;
 	const { base, inner, content, text } = styles();
 
 	return (
 		<Box as='li' data-menu='item-outer' className={base({ className: classNames?.outer })}>
 			<Link {...(rest as LinkProps<'a'>)} data-menu='item-inner' className={inner({ className: classNames?.inner })}>
-				{/* The icon or image should go here */}
+				{icon && <MenuItemIcon icon={icon} />}
 
 				<Box as='span' data-menu='item-content' className={content({ className: classNames?.content })}>
 					<Text as='span' data-menu='item-title' className={text({ className: classNames?.title, as: 'title' })}>

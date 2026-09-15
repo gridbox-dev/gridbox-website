@@ -11,12 +11,13 @@ import { SERVICES_APP_ROUTES } from '@/config/constants/app-routes';
 import type { InferDictionary } from '@/config/i18n';
 import { tv } from '@/config/ui/tw-variants';
 import { MenuItem } from '@/modules/layout/dropdown-menu/components/menu-item/menu-item';
+import { SERVICES_ICONS_MAP } from '@/modules/layout/dropdown-menu/constants/services-icons';
 
 const styles = tv({
 	slots: {
 		base: 'flex flex-col gap-8 h-fit w-full',
 		text: 'text-copy-14 font-medium text-quaternary',
-		list: 'grid grid-cols-3 gap-y-2 gap-x-24 h-fit w-full',
+		list: 'grid grid-cols-3 gap-y-8 gap-x-24 h-fit w-full',
 	},
 });
 
@@ -93,9 +94,11 @@ export const ServicesBlock = (props: ServicesBlockProps): JSX.Element => {
 			<Box as='ul' data-menu='services-block-list' className={list({ className: classNames?.inner })}>
 				{Object.entries(links).map(([key, value]) => {
 					const href = SERVICES_APP_ROUTES[key];
-					if (!href) return null;
+					const icon = SERVICES_ICONS_MAP[key];
 
-					return <MenuItem key={key} href={href} title={value.title} description={value.description} />;
+					if (!(href && icon)) return null;
+
+					return <MenuItem key={key} href={href} title={value.title} description={value.description} icon={icon} />;
 				})}
 			</Box>
 		</Box>
