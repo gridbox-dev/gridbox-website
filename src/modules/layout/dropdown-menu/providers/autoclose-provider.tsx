@@ -6,8 +6,7 @@
 
 'use client';
 
-import { Slot } from '@radix-ui/react-slot';
-import { type JSX, type PropsWithChildren, useEffect, useRef } from 'react';
+import { type JSX, type PropsWithChildren, useEffect } from 'react';
 import { useNavbarStore } from '@/stores/navbar-store';
 import { usePopupStore } from '@/stores/popup-store';
 
@@ -17,12 +16,10 @@ import { usePopupStore } from '@/stores/popup-store';
  * interactions occur outside both the dropdown overlay and the primary header bar.
  *
  * @param props - Children nodes enclosed within the auto-close boundary defined by {@link PropsWithChildren}.
- * @returns The slot-composed child element attached to the click listener scope reference.
+ * @returns The children nodes unaffected by slot reference forwarding issues.
  */
 export const AutoCloseProvider = (props: PropsWithChildren): JSX.Element => {
 	const { children } = props;
-
-	const containerRef = useRef<HTMLElement>(null);
 
 	const openedItem = useNavbarStore((s) => s.openedItem);
 	const openedPopup = usePopupStore((s) => s.openedPopup);
@@ -38,14 +35,14 @@ export const AutoCloseProvider = (props: PropsWithChildren): JSX.Element => {
 		const handlePointerDown = (event: PointerEvent) => {
 			const target = event.target as Node | null;
 
-			const container = containerRef.current;
+			const dropdown = document.getElementById('root-dropdown-menu');
 			const header = document.getElementById('root-header');
 
 			if (!target) return;
 
 			const path = event.composedPath();
 
-			const isInsideDropdown = container ? path.includes(container) || container.contains(target) : false;
+			const isInsideDropdown = dropdown ? path.includes(dropdown) || dropdown.contains(target) : false;
 			const isInsideHeader = header ? path.includes(header) || header.contains(target) : false;
 
 			if (!(isInsideDropdown || isInsideHeader)) {
@@ -53,6 +50,7 @@ export const AutoCloseProvider = (props: PropsWithChildren): JSX.Element => {
 				toggleItem(undefined);
 			}
 		};
+
 		document.addEventListener('pointerdown', handlePointerDown, true);
 
 		return () => {
@@ -60,5 +58,5 @@ export const AutoCloseProvider = (props: PropsWithChildren): JSX.Element => {
 		};
 	}, [isDropdownOpen, toggleItem, togglePopup]);
 
-	return <Slot ref={containerRef}>{children}</Slot>;
+	return <>{children}</>;
 };
