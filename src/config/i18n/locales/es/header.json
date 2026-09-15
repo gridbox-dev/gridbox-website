@@ -133,36 +133,42 @@
 					"label": "Consumo",
 					"items": [
 						{
+							"key": "airlines",
 							"href": "/industrias/aerolineas",
 							"title": "Aerolíneas",
 							"description": "Potenciamos la experiencia de los pasajeros y la eficiencia operativa en entornos altamente regulados.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria de aerolíneas"
 						},
 						{
+							"key": "banking",
 							"href": "/industrias/banca",
 							"title": "Banca y servicios financieros",
 							"description": "Modernizamos el core financiero para habilitar operaciones digitales seguras, ágiles y escalables.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria de banca y servicios financieros"
 						},
 						{
+							"key": "automotive",
 							"href": "/industrias/automotriz",
 							"title": "Automotriz",
 							"description": "Aceleramos la evolución del negocio automotriz mediante canales digitales integrados y flotas conectadas.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria automotriz"
 						},
 						{
+							"key": "insurance",
 							"href": "/industrias/seguros",
 							"title": "Seguros",
 							"description": "Automatizamos la gestión de pólizas, resolución de siniestros y la atención al asegurado.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria de seguros"
 						},
 						{
+							"key": "consumer-goods",
 							"href": "/industrias/bienes-consumo",
 							"title": "Bienes de consumo y Retail",
 							"description": "Transformamos la relación directa con el consumidor para impulsar ventas en entornos omnicanal.",
 							"ariaLabel": "Ver soluciones tecnológicas para bienes de consumo y retail"
 						},
 						{
+							"key": "travel-hospitality",
 							"href": "/industrias/turismo-hospitalidad",
 							"title": "Turismo y Hospitalidad",
 							"description": "Digitalizamos la experiencia del huésped optimizando reservas, fidelización y operaciones en propiedad.",
@@ -174,36 +180,42 @@
 					"label": "Industria",
 					"items": [
 						{
+							"key": "energy-mining",
 							"href": "/industrias/energia-mineria",
 							"title": "Energía y Minería",
 							"description": "Impulsamos la continuidad operacional y la toma de decisiones estratégicas mediante datos en tiempo real.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria de energía y minería"
 						},
 						{
+							"key": "logistics",
 							"href": "/industrias/logistica-suministro",
 							"title": "Logística y suministro",
 							"description": "Optimizamos la visibilidad global de la cadena de suministro para garantizar entregas ágiles y eficientes.",
 							"ariaLabel": "Ver soluciones tecnológicas para logística y cadena de suministro"
 						},
 						{
+							"key": "manufacturing",
 							"href": "/industrias/manufactura-industria",
 							"title": "Manufactura e Industria",
 							"description": "Conectamos los procesos de planta con la estrategia corporativa para maximizar la productividad.",
 							"ariaLabel": "Ver soluciones tecnológicas para manufactura e industria"
 						},
 						{
+							"key": "agribusiness",
 							"href": "/industrias/agroindustria",
 							"title": "Agroindustria",
 							"description": "Potenciamos la trazabilidad en terreno y la eficiencia de los procesos reales de producción.",
 							"ariaLabel": "Ver soluciones tecnológicas para la agroindustria"
 						},
 						{
+							"key": "real-estate",
 							"href": "/industrias/inmobiliario-construccion",
 							"title": "Inmobiliario y Construcción",
 							"description": "Digitalizamos toda la cadena de valor inmobiliaria para optimizar la comercialización y gestión de activos.",
 							"ariaLabel": "Ver soluciones tecnológicas para la industria inmobiliaria y construcción"
 						},
 						{
+							"key": "infrastructure",
 							"href": "/industrias/infraestructura-transporte",
 							"title": "Infraestructura y Transporte",
 							"description": "Modernizamos la gestión de activos urbanos, redes de transporte y planificación de flota para eficiencia operativa.",
@@ -215,36 +227,42 @@
 					"label": "Servicios",
 					"items": [
 						{
+							"key": "education",
 							"href": "/industrias/educacion",
 							"title": "Educación",
 							"description": "Rediseñamos la experiencia académica para conectar a las instituciones con estudiantes hiperconectados.",
 							"ariaLabel": "Ver soluciones tecnológicas para el sector educativo"
 						},
 						{
+							"key": "tech",
 							"href": "/industrias/tecnologia-telecomunicaciones",
 							"title": "Tecnología y Telecomunicaciones",
 							"description": "Escalamos productos y plataformas digitales para responder a las crecientes exigencias del mercado.",
 							"ariaLabel": "Ver soluciones para empresas de tecnología y telecomunicaciones"
 						},
 						{
+							"key": "healthcare",
 							"href": "/industrias/salud",
 							"title": "Salud y servicios médicos",
 							"description": "Elevamos la calidad de la atención médica integrando la gestión clínica con el ecosistema del paciente.",
 							"ariaLabel": "Ver soluciones tecnológicas para el sector salud y servicios médicos"
 						},
 						{
+							"key": "media",
 							"href": "/industrias/medios-entretenimiento",
 							"title": "Medios y Entretenimiento",
 							"description": "Desarrollamos plataformas de contenido y modelos de monetización para audiencias digitales.",
 							"ariaLabel": "Ver soluciones tecnológicas para medios de comunicación y entretenimiento"
 						},
 						{
+							"key": "government",
 							"href": "/industrias/sector-publico",
 							"title": "Sector Público y Gobierno",
 							"description": "Aceleramos la digitalización del Estado para ofrecer servicios más ágiles, transparentes y accesibles.",
 							"ariaLabel": "Ver soluciones tecnológicas para el sector público y gobierno"
 						},
 						{
+							"key": "investment",
 							"href": "/industrias/fondos-inversionistas",
 							"title": "Fondos e Inversionistas",
 							"description": "Evaluamos y aceleramos la creación de valor tecnológico dentro de los portafolios de inversión.",
