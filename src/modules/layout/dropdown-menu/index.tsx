@@ -6,11 +6,12 @@
 
 import type { JSX } from 'react';
 import { RootWrapper } from '@/modules/layout/dropdown-menu/components/root/root-wrapper';
+import { ServicesMenu } from '@/modules/layout/dropdown-menu/components/root/services-menu';
+import { AutoCloseProvider } from '@/modules/layout/dropdown-menu/providers/autoclose-provider';
 import { FocusProvider } from '@/modules/layout/dropdown-menu/providers/focus-provider';
 import { MotionProvider } from '@/modules/layout/dropdown-menu/providers/motion-provider';
 import { VisibilityProvider } from '@/modules/layout/dropdown-menu/providers/visibility-provider';
 import type { BaseComponent } from '@/types/components';
-import { AutoCloseProvider } from './providers/autoclose-provider';
 
 export interface DropdownMenuProps extends BaseComponent {}
 
@@ -23,7 +24,7 @@ export const DropdownMenu = (props: DropdownMenuProps): JSX.Element => {
 				<FocusProvider>
 					<MotionProvider>
 						<RootWrapper dark={dark} id='root-dropdown-menu'>
-							Full-width dropdown menu
+							<ServicesMenu />
 						</RootWrapper>
 					</MotionProvider>
 				</FocusProvider>
