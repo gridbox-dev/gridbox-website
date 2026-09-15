@@ -63,7 +63,7 @@ export const MotionProvider = (props: PropsWithChildren): JSX.Element => {
 				});
 			}
 		},
-		{ scope: containerRef, dependencies: [isDropdownOpen] },
+		{ scope: containerRef, dependencies: [isDropdownOpen], revertOnUpdate: true },
 	);
 
 	return <Slot ref={containerRef}>{children}</Slot>;
