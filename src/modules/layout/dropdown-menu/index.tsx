@@ -10,6 +10,7 @@ import { FocusProvider } from '@/modules/layout/dropdown-menu/providers/focus-pr
 import { MotionProvider } from '@/modules/layout/dropdown-menu/providers/motion-provider';
 import { VisibilityProvider } from '@/modules/layout/dropdown-menu/providers/visibility-provider';
 import type { BaseComponent } from '@/types/components';
+import { AutoCloseProvider } from './providers/autoclose-provider';
 
 export interface DropdownMenuProps extends BaseComponent {}
 
@@ -18,13 +19,15 @@ export const DropdownMenu = (props: DropdownMenuProps): JSX.Element => {
 
 	return (
 		<VisibilityProvider>
-			<FocusProvider>
-				<MotionProvider>
-					<RootWrapper dark={dark} id='root-dropdown-menu'>
-						Full-width dropdown menu
-					</RootWrapper>
-				</MotionProvider>
-			</FocusProvider>
+			<AutoCloseProvider>
+				<FocusProvider>
+					<MotionProvider>
+						<RootWrapper dark={dark} id='root-dropdown-menu'>
+							Full-width dropdown menu
+						</RootWrapper>
+					</MotionProvider>
+				</FocusProvider>
+			</AutoCloseProvider>
 		</VisibilityProvider>
 	);
 };
